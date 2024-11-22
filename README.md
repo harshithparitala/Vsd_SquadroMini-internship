@@ -36,5 +36,8 @@ RISC -V Based Lab
 Now we are compiling the same code in RISCV 
 compiling using command ```cat sum1ton.c```
 
+![risc1](https://github.com/user-attachments/assets/5e31f14d-e508-4d95-bd6d-167a52d6333a)
+
+![risc2](https://github.com/user-attachments/assets/a8e2d864-cbe7-44a6-9e9c-eb020d99e489)
 
 </details>
