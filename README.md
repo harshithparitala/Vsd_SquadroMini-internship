@@ -1,2 +1,1 @@
 # Vsd_SquadroMini-internship
->
