@@ -26,6 +26,9 @@ gcc sum1ton.c
 ````
 ./a.out is used for result 
 result :
+![c result ](https://github.com/user-attachments/assets/78b285ae-7b20-4409-acd1-4d8e9ebccf8c)
 
+RISC -V Based Lab
+----
 
 </details>
