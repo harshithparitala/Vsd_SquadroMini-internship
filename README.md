@@ -4,7 +4,9 @@ This VSDSquadron Mini-Internship program introduces participants to the world of
 <details>
 <summary><b>Task 1:</b> Installing RISC-V toolchain and Refer to C and RISC-V based lab videos </summary>   
 <br>
- 
+
+ C-based :-
+ ----
 Install leafpad editor for C programming using command
  ``
          sudo apt  install leafpad
@@ -23,6 +25,7 @@ gcc sum1ton.c
 ./a.out 
 ````
 ./a.out is used for result 
+result :
 
 
 </details>
