@@ -5,7 +5,7 @@ This VSDSquadron Mini-Internship program introduces participants to the world of
 <summary><b>Task 1:</b> Installing RISC-V toolchain and Refer to C and RISC-V based lab videos </summary>   
 <br>
 
- C-based :-
+ C-Based Lab
  ----
 Install leafpad editor for C programming using command
  ``
