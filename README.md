@@ -38,6 +38,20 @@ compiling using command ```cat sum1ton.c```
 
 ![risc1](https://github.com/user-attachments/assets/5e31f14d-e508-4d95-bd6d-167a52d6333a)
 
+For compiling the above C code in RISCV use command 
+```
+ riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+```
+After this open a new tab and give command as `` riscv64-unknown-elf-objdump -d sum1ton.o | less``
+
+After compiling in RISC we will get the Assembly language code of it and we will seaarch for main part of the code using ``/main``
+
+and the Assembly language for main function of the code is as :
 ![risc2](https://github.com/user-attachments/assets/a8e2d864-cbe7-44a6-9e9c-eb020d99e489)
+
+In this Assembly language code there are 11 instructions using -O1 
+
+Now we will check number of instructions using ``-Ofast``
+
 
 </details>
