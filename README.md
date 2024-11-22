@@ -18,7 +18,7 @@ Write a program that gives the sum of n numbers using C in leafpad editor."sum1t
 
  ![overleaf sum1ton](https://github.com/user-attachments/assets/9b683e34-7296-4785-889d-fc1b85038656)
 
- After Compiling C code save ``ctrl+s'' and close the window ``ctrl+w`` 
+ After Compiling C code save ``ctrl+s`` and close the window ``ctrl+w`` 
 
  Run the program and check the results using commands
  ````
