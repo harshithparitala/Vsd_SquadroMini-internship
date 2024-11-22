@@ -33,6 +33,8 @@ result :
 
 RISC -V Based Lab
 ----
+Now we are compiling the same code in RISCV 
+compiling using command ```cat sum1ton.c```
 
 
 </details>
