@@ -7,9 +7,12 @@ This VSDSquadron Mini-Internship program introduces participants to the world of
  
 Install leafpad editor for C programming using command
  ``
-         # sudo apt  install leafpad
+         sudo apt  install leafpad
  ``
+ ![install leafpad](https://github.com/user-attachments/assets/69a4702e-69e4-494d-8bb0-4a9f347eee5b)
  
+![overleaf sum1ton](https://github.com/user-attachments/assets/9b683e34-7296-4785-889d-fc1b85038656)
+
 Write a program that gives the sum of n numbers using C in leafpad editor
  
 </details>
