@@ -53,5 +53,7 @@ In this Assembly language code there are 11 instructions using -O1
 
 Now we will check number of instructions using ``-Ofast``
 
+![main o-fast](https://github.com/user-attachments/assets/ae45d301-d528-4fd0-894f-142e972ab70b)
 
+Even in this case there are 11 instructions 
 </details>
