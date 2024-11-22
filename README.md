@@ -11,8 +11,18 @@ Install leafpad editor for C programming using command
  ``
  ![install leafpad](https://github.com/user-attachments/assets/69a4702e-69e4-494d-8bb0-4a9f347eee5b)
 
-Write a program that gives the sum of n numbers using C in leafpad editor
+Write a program that gives the sum of n numbers using C in leafpad editor."sum1ton.c" is the filename
 
  ![overleaf sum1ton](https://github.com/user-attachments/assets/9b683e34-7296-4785-889d-fc1b85038656)
- 
+
+ After Compiling C code save ``ctrl+s'' and close the window ``ctrl+w`` 
+
+ Run the program and check the results using commands
+ ````
+gcc sum1ton.c
+./a.out 
+````
+./a.out is used for result 
+
+
 </details>
