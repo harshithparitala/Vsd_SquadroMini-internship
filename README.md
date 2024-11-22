@@ -8,9 +8,10 @@ This VSDSquadron Mini-Internship program introduces participants to the world of
  C-Based Lab
  ----
 Install leafpad editor for C programming using command
- ``
+
+ ```
          sudo apt  install leafpad
- ``
+ ```
  ![install leafpad](https://github.com/user-attachments/assets/69a4702e-69e4-494d-8bb0-4a9f347eee5b)
 
 Write a program that gives the sum of n numbers using C in leafpad editor."sum1ton.c" is the filename
