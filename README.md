@@ -86,8 +86,9 @@ In the case of `-Ofast` it focus  Aggressively optimizes for maximum performance
 <details>
 <summary><b>Task 2:</b> Performing SPIKE simulation and Debugging the C code Using spike  </summary>   
 <br>
+ 
 What is Spike Simulation?
---
+--------- 
 `Spike` is the official RISC-V ISA (Instruction Set Architecture) simulator. It allows developers to simulate RISC-V programs and applications, providing an environment to run, test, and debug code designed for RISC-V-based processors. Spike is commonly used in the context of development and research related to RISC-V architecture.
 
 `GCC (GNU Compiler Collection)` is a popular set of compilers that supports a variety of programming languages, including C and C++. In the context of RISC-V, GCC can be used to compile code for RISC-V targets, and Spike can then simulate the execution of that code on a virtual RISC-V machine.
