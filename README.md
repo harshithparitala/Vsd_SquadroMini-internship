@@ -104,6 +104,13 @@ Debugger:
 
 
 
+`lui` 
+
+
+
+
+
+` addi`
 
 
 
