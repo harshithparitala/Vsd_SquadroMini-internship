@@ -100,9 +100,13 @@ Debugging the Assembly Language Program using ``spike -d pk sum1ton.o`` in a new
 
 Assembly Language Program :
 
+![assemblylang](https://github.com/user-attachments/assets/75bdb822-76cd-4b17-8913-4f573dcbfdd4)
+
 Debugger:
 
+![match sp](https://github.com/user-attachments/assets/1d6583a8-e92a-4ae1-a792-40461e99a1e4)
 
+In Debugger we Debug the Assembly Language by following the each instruction .At the address of `100b4` the register value of stack point `sp` is `0x0000003ffffffb50` and after completion of instruction`sp, sp, -16` ,the new value of register stack pointer is `0x0000003ffffffb40`
 
 `lui` 
 Load Upper Immediate:
@@ -119,5 +123,8 @@ Add Immediate
 
  Instruction:` addi a0, a0, %lo(LC1)`
 Purpose: The ADDI instruction adds an immediate value (12-bit constant) to the value in a source register (rs1) and stores the result in a destination register (rd).
+
+![final](https://github.com/user-attachments/assets/f055f819-bad6-426d-a04a-05fd96a704ee)
+After  finishing all the instructions in Assembly language ,At the address of `100d8` it returns the value of sum.
 
 </details>
