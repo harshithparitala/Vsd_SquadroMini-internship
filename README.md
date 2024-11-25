@@ -125,6 +125,10 @@ Add Immediate
 Purpose: The ADDI instruction adds an immediate value (12-bit constant) to the value in a source register (rs1) and stores the result in a destination register (rd).
 
 ![final](https://github.com/user-attachments/assets/f055f819-bad6-426d-a04a-05fd96a704ee)
+
 After  finishing all the instructions in Assembly language ,At the address of `100d8` it returns the value of sum.
+
+Application:
+--
 
 </details>
