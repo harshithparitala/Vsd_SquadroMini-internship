@@ -92,6 +92,17 @@ What is Spike Simulation?
 
 `GCC (GNU Compiler Collection)` is a popular set of compilers that supports a variety of programming languages, including C and C++. In the context of RISC-V, GCC can be used to compile code for RISC-V targets, and Spike can then simulate the execution of that code on a virtual RISC-V machine.
 
+Now we wil use the command `spike pk sum1ton.o` give the output of the C code and verifies the instructions are correct
+
+![Screenshot from 2024-11-25 11-42-08](https://github.com/user-attachments/assets/e369d5bb-0bb3-4ec5-92a7-fdf1847afa2e)
+
+Debugging the Assembly Language Program using ``spike -d pk sum1ton.o`` in a new terminal window.
+
+Assembly Language Program :
+
+Debugger:
+
+
 
 
 
