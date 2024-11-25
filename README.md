@@ -105,13 +105,15 @@ Debugger:
 
 
 `lui` 
+![Screenshot 2024-11-25 154052](https://github.com/user-attachments/assets/8e55efa5-e3c8-4f87-bc37-91a4d644515a)
+
 
 
 
 
 
 ` addi`
-
+![image](https://github.com/user-attachments/assets/e8b72f51-cee7-4706-9fec-226a7d1eb7e9)
 
 
 
