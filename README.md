@@ -82,3 +82,16 @@ In the case of `-O1` it  focus  A moderate level of optimization that aims to im
 In the case of `-Ofast` it focus  Aggressively optimizes for maximum performance, often at the expense of strict adherence to the language standard and longer compilation times.
 
 </details>
+
+<details>
+<summary><b>Task 2:</b> Performing SPIKE simulation and Debugging the C code Using spike  </summary>   
+<br>
+
+
+
+
+
+
+
+
+</details>
