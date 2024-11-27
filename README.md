@@ -150,5 +150,23 @@ We want to create a program that:
 
 C-program using Leafpad :
 -
+![counterdown leafpad](https://github.com/user-attachments/assets/5eb13062-6041-481f-9971-946d5169e903)
+
+output of C code is :
+
+![c out counterdown](https://github.com/user-attachments/assets/9753cb5a-5902-45a3-959a-8a3c3c8ac925)
+
+compilation using gcc :
+
+![counterdown using gcc](https://github.com/user-attachments/assets/6c1c059b-38ec-45b6-98ee-10562faaaff7)
+
+Assembly Language program for the above C code: 
+
+
+![Assembly language counterdown](https://github.com/user-attachments/assets/e42643af-fc6c-4bcb-9d62-acd4bdd7d234)
+
+Debudding all the instructions in the Assembly language program using spike 
+
+![debug using spike](https://github.com/user-attachments/assets/421d1e4f-ab7c-42fe-8ca9-2897a80975da)
 
 </details>
