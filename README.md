@@ -169,4 +169,7 @@ Debudding all the instructions in the Assembly language program using spike
 
 ![debug using spike](https://github.com/user-attachments/assets/421d1e4f-ab7c-42fe-8ca9-2897a80975da)
 
+Debugging the Assembly Language instructions :
+
+
 </details>
