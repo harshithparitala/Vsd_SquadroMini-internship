@@ -142,7 +142,9 @@ We want to create a program that:
 
 Initializes a timer with a starting value (e.g., 10 seconds).
 Prints the current countdown value.
+
 Decrements the timer every second.
+
 Stops when the timer reaches zero.
 
 C-program using Leafpad :
