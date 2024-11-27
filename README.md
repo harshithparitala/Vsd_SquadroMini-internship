@@ -129,7 +129,23 @@ Purpose: The ADDI instruction adds an immediate value (12-bit constant) to the v
 
 After  finishing all the instructions in Assembly language ,At the address of `100d8` it returns the value of sum.
 
+task : Wite a simple C program for any application and compile using RISC -V GCC/SPIKE
+
 Application:
 --
+
+Counterdown Clock :
+--
+The countdown counter is a program that begins from a specified value and decrements it by one at regular intervals until it reaches zero.
+
+We want to create a program that:
+
+Initializes a timer with a starting value (e.g., 10 seconds).
+Prints the current countdown value.
+Decrements the timer every second.
+Stops when the timer reaches zero.
+
+C-program using Leafpad :
+
 
 </details>
