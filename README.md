@@ -173,14 +173,14 @@ Debugging the Assembly Language instructions :
 
 | **Address** | **Instruction**          | **Explanation**                                    |
 |-------------|--------------------------|----------------------------------------------------|
-| `101c8`     | `addi sp, sp, -32`       | Allocate 32 bytes on the stack.                   |
-| `101cc`     | `sd ra, 24(sp)`          | Save return address (`ra`) on the stack.          |
-| `101ce`     | `sd s0, 16(sp)`          | Save register `s0` on the stack.                  |
-| `101d0`     | `sd s1, 8(sp)`           | Save register `s1` on the stack.                  |
-| `101d2`     | `sd s2, 0(sp)`           | Save register `s2` on the stack.                  |
-| `101d4`     | `lui s2, 0x21`           | Load upper immediate `0x21` into `s2`.            |
-| `101d8`     | `addi s2, s2, 720`       | Add `720` to `s2`.                                |
-| `101da`     | `mv a0, s2`              | Move the value of `s2` to `a0` (argument for `printf`). |
+| `101c4`     | `addi sp, sp, -32`       | Allocate 32 bytes on the stack.                   |
+| `101c8`     | `sd ra, 24(sp)`          | Save return address (`ra`) on the stack.          |
+| `101ca`     | `sd s0, 16(sp)`          | Save register `s0` on the stack.                  |
+| `101cc`     | `sd s1, 8(sp)`           | Save register `s1` on the stack.                  |
+| `101ce`     | `sd s2, 0(sp)`           | Save register `s2` on the stack.                  |
+| `101d0`     | `lui s2, 0x21`           | Load upper immediate `0x21` into `s2`.            |
+| `101d4`     | `addi s2, s2, 720`       | Add `720` to `s2`.                                |
+| `101d8`     | `mv a0, s2`              | Move the value of `s2` to `a0` (argument for `printf`). |
 | `101dc`     | `jal ra, 1047c <printf>` | Call the `printf` function.                       |
 | `101e0`     | `addi ra, 10184 <delay>` | Load the address of `delay` into `ra`.            |
 | `101e4`     | `addiw s0, s0, -1`       | Decrement `s0` by 1.                              |
@@ -194,6 +194,7 @@ Debugging the Assembly Language instructions :
 | `10206`     | `ld s2, 0(sp)`           | Restore register `s2` from the stack.             |
 | `1021e`     | `addi sp, sp, 32`        | Deallocate 32 bytes from the stack.               |
 | `10220`     | `ret`                    | Return to the caller.                             |
+
 
 
 </details>
