@@ -171,5 +171,29 @@ Debudding all the instructions in the Assembly language program using spike
 
 Debugging the Assembly Language instructions :
 
+| **Address** | **Instruction**          | **Explanation**                                    |
+|-------------|--------------------------|----------------------------------------------------|
+| `101c8`     | `addi sp, sp, -32`       | Allocate 32 bytes on the stack.                   |
+| `101cc`     | `sd ra, 24(sp)`          | Save return address (`ra`) on the stack.          |
+| `101ce`     | `sd s0, 16(sp)`          | Save register `s0` on the stack.                  |
+| `101d0`     | `sd s1, 8(sp)`           | Save register `s1` on the stack.                  |
+| `101d2`     | `sd s2, 0(sp)`           | Save register `s2` on the stack.                  |
+| `101d4`     | `lui s2, 0x21`           | Load upper immediate `0x21` into `s2`.            |
+| `101d8`     | `addi s2, s2, 720`       | Add `720` to `s2`.                                |
+| `101da`     | `mv a0, s2`              | Move the value of `s2` to `a0` (argument for `printf`). |
+| `101dc`     | `jal ra, 1047c <printf>` | Call the `printf` function.                       |
+| `101e0`     | `addi ra, 10184 <delay>` | Load the address of `delay` into `ra`.            |
+| `101e4`     | `addiw s0, s0, -1`       | Decrement `s0` by 1.                              |
+| `101e6`     | `bne s0, s1, 101e4`      | Branch to `101e4` if `s0` is not equal to `s1` (loop condition). |
+| `101e8`     | `lui a0, 0x21`           | Load upper immediate `0x21` into `a0`.            |
+| `101ea`     | `addi a0, a0, 744`       | Add `744` to `a0`.                                |
+| `101ec`     | `jal a0, 105a0 <puts>`   | Call the `puts` function.                         |
+| `10200`     | `ld ra, 24(sp)`          | Restore return address (`ra`) from the stack.     |
+| `10202`     | `ld s0, 16(sp)`          | Restore register `s0` from the stack.             |
+| `10204`     | `ld s1, 8(sp)`           | Restore register `s1` from the stack.             |
+| `10206`     | `ld s2, 0(sp)`           | Restore register `s2` from the stack.             |
+| `1021e`     | `addi sp, sp, 32`        | Deallocate 32 bytes from the stack.               |
+| `10220`     | `ret`                    | Return to the caller.                             |
+
 
 </details>
