@@ -165,7 +165,7 @@ Assembly Language program for the above C code:
 
 ![Assembly language counterdown](https://github.com/user-attachments/assets/e42643af-fc6c-4bcb-9d62-acd4bdd7d234)
 
-Debudding all the instructions in the Assembly language program using spike 
+Debugging all the instructions in the Assembly language program using spike 
 
 ![debug using spike](https://github.com/user-attachments/assets/421d1e4f-ab7c-42fe-8ca9-2897a80975da)
 
