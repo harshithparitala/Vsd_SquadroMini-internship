@@ -140,14 +140,15 @@ The countdown counter is a program that begins from a specified value and decrem
 
 We want to create a program that:
 
-Initializes a timer with a starting value (e.g., 10 seconds).
-Prints the current countdown value.
+1.Initializes a timer with a starting value (e.g., 10 seconds).
 
-Decrements the timer every second.
+2.Prints the current countdown value.
 
-Stops when the timer reaches zero.
+3.Decrements the timer every second.
+
+4.Stops when the timer reaches zero.
 
 C-program using Leafpad :
-
+-
 
 </details>
