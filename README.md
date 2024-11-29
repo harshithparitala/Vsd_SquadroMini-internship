@@ -278,23 +278,18 @@ I-Type instructions are used for operations involving immediate values, such as 
 Breakdown of the Fields:
 -
 1.opcode( bits 6:0) :
-
  This 7 bits are used to identify the general operation type 
  
 2. rd (bits 11:7) :
-
  It specifies the Destination register which is used to store the result of operation
 
 3.funct3(bits 14:12) :
-
  It specifies the operation to perform such as load , immediate arthematic etc.,
 
 4. rs1 (bits 19 :15 ) :
-
- specifies the source register for the operation. For example, it provides the base address for memory instructions or a source operand for arithmetic operations.
+specifies the source register for the operation. For example, it provides the base address for memory instructions or a source operand for arithmetic operations.
 
 5.imm[11:0] ( bits 31:20) :
-
  This 12-bit immediate value is sign-extended and used directly as part of the operation.
 It serves as a constant operand for immediate operations or an offset for memory access.
 
