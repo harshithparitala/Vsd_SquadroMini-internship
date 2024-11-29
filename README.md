@@ -268,7 +268,7 @@ Examples for R Type operation.
 | `0000000`   | `110`      | OR                                  |
 | `0000000`   | `111`      | AND                                 |
 
-2.I Type :
+2.I-Type :
 --
 
 ![image](https://github.com/user-attachments/assets/291e132c-afb6-46c2-a34c-9e46c2a845de)
@@ -303,6 +303,36 @@ Common I -Type instructions :
 | `lw`            | `0000011`  | `010`      | Load word from memory.               |
 | `lh`            | `0000011`  | `001`      | Load halfword from memory.           |
 | `jalr`          | `1100111`  | `000`      | Jump and link register (indirect jump). |
+
+3.S-Type:
+-
+ S-Type instructions are primarily used for store operations, where data from a register is stored into memory at a specified address.
+
+1.opcode (bits 6:0) :
+ It identifies the general geration
+
+2. imm[4:0] (bits 11:7) :
+ Lower 5 bits of the 12-bit immediate (offset)
+
+3.funct3 (bits 14:12) :
+ specifies the type of store like word, byte,halfword etc.,
+
+4. rs1 (bits 19 :15 ) :
+ specifies the source register for the operation.
+
+5. rs2 (bits 24:20) :
+ specifies the source register containing the value to be stored in memory.
+
+6. imm[11:5] (bits 31:25) :
+  Upper 7 bits of the 12-bit immediate (offset).
+
+Common S-Type Instructions
+-
+| **Instruction** | **opcode**  | **funct3** | **Description**                      |
+|-----------------|-------------|------------|--------------------------------------|
+| `sw`           | `0100011`   | `010`      | Store Word (32-bit).                |
+| `sh`           | `0100011`   | `001`      | Store Halfword (16-bit).            |
+| `sb`           | `0100011`   | `000`      | Store Byte (8-bit).                 |
 
 
 
