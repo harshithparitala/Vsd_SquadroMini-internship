@@ -367,24 +367,44 @@ B-Type instructions enable branching (jumping) to another location in the code, 
 
 1.opcode(bits 6:0) :
  It identifies the general operation
+ 
 2.imm[11] (bit 7) :
  Represents one of the middle bits of the immediate value.
+ 
 3.imm[4:1] (bits 11:8) :
  Contributes the lower bits of the branch offset.
+ 
 4.funct3 (bits 14:12) :
  specifies the branch condition that determines how the values in the source registers (rs1 and rs2) are compared.
+ 
 5.rs1 (bits 19:15) :
  specifies the first source register for comparision
+ 
 6.rs2 (bits 24:20) :
  specifies the second source register for comparision
+ 
 7.imm[10:5] (bits 30:25) :
+ Provides part of the branch offset.
+These bits are directly concatenated to the rest of the immediate fields to form the full 12-bit offset.
  
 8.imm[12] (bit 31) :
+ Determines the sign of the branch offset.
+If imm[12] is 1, the offset is negative (indicating a backward branch in memory).
+If imm[12] is 0, the offset is positive (indicating a forward branch in memory).
 
 
+funct3 examples in B-Type:
 
+| **Instruction** | **`funct3` Value** | **Condition**                   |
+|------------------|---------------------|----------------------------------|
+| `BEQ`           | `000`              | Branch if `rs1 == rs2`.         |
+| `BNE`           | `001`              | Branch if `rs1 != rs2`.         |
+| `BLT`           | `100`              | Branch if `rs1 < rs2` (signed). |
+| `BGE`           | `101`              | Branch if `rs1 >= rs2` (signed).|
+| `BLTU`          | `110`              | Branch if `rs1 < rs2` (unsigned).|
+| `BGEU`          | `111`              | Branch if `rs1 >= rs2` (unsigned).|
 
-
-
+6.J-Type:
+-
 
 </details>
