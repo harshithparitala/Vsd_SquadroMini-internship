@@ -223,7 +223,7 @@ In the base RV32I ISA, there are four core instruction formats (R/I/S/U), as sho
 
 This diagram represents the R-Type instruction format in the RISC-V Instruction Set Architecture (ISA). R-Type instructions are typically used for register-to-register operations
 
-1.Opcode (bits 6-0):
+ 1.Opcode (bits 6-0):
 
 The 7-bit opcode identifies the type of operation and the instruction format. For R-Type instructions, the opcode specifies that the instruction is register-based.
 
@@ -233,7 +233,7 @@ The 7-bit opcode identifies the type of operation and the instruction format. Fo
    This 3 bit is used for differentiate between categories of operations within the same opcode.
    R type operations:
    
-   | **funct3** | **Operation**                      |
+| **funct3** | **Operation**                      |
 |------------|------------------------------------|
 | `000`      | Add / Sub (depends on `funct7`)   |
 | `001`      | Shift Left Logical (SLL)          |
@@ -251,7 +251,7 @@ The 7-bit opcode identifies the type of operation and the instruction format. Fo
 6. funct7(bits 31:25) :
  It provides additional differentiation between instructions that use the same opcode and fuct3.
 
-   Examples for R Type operation.
+Examples for R Type operation.  
 
 | **funct7**  | **funct3** | **Operation**                        |
 |-------------|------------|--------------------------------------|
@@ -265,6 +265,4 @@ The 7-bit opcode identifies the type of operation and the instruction format. Fo
 | `0100000`   | `101`      | Shift Right Arithmetic (SRA)        |
 | `0000000`   | `110`      | OR                                  |
 | `0000000`   | `111`      | AND                                 |
-
-
 </details>
