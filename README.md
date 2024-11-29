@@ -424,7 +424,7 @@ J-Type instructions are used for unconditional jumps ,these are also  used for c
 4.imm[11] (bit 20) :
  Bit 11 of the intermediate Value
 
-5.imm[10:1] (bits 10:1) :
+5.imm[10:1] (bits 30:21) :
  Bits 10 through 1 of the immediate value.
 
 6.imm[20] (bit 31) :
