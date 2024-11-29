@@ -218,16 +218,16 @@ In the base RV32I ISA, there are four core instruction formats (R/I/S/U), as sho
 
 ![image](https://github.com/user-attachments/assets/47b33518-df07-42ce-9922-4530c16492e9)
 
-1.R type:
+1.R-Type:
 --
 ![image](https://github.com/user-attachments/assets/6bcad23c-667d-4fa1-ba98-e5c6d82f3b12)
 
   This diagram represents the R-Type instruction format in the RISC-V Instruction Set       
     Architecture (ISA). R-Type instructions are typically used for register-to-register operations
 
-1.Opcode (bits 6-0):
+1. Opcode (bits 6-0):
 
-The 7-bit opcode identifies the type of operation and the instruction format. For R-Type instructions, the opcode specifies that the instruction is register-based.
+   The 7-bit opcode identifies the type of operation and the instruction format. For R-Type instructions, the opcode specifies that the instruction is register-based.
 
 2. rd( bits 11:7):
    This bit is used for designation register where the output of the operation is written.
@@ -277,19 +277,19 @@ I-Type instructions are used for operations involving immediate values, such as 
 
 Breakdown of the Fields:
 -
-1.opcode( bits 6:0) :
+1. opcode( bits 6:0) :
  This 7 bits are used to identify the general operation type 
  
 2. rd (bits 11:7) :
  It specifies the Destination register which is used to store the result of operation
 
-3.funct3(bits 14:12) :
+3. funct3(bits 14:12) :
  It specifies the operation to perform such as load , immediate arthematic etc.,
 
 4. rs1 (bits 19 :15 ) :
 specifies the source register for the operation. For example, it provides the base address for memory instructions or a source operand for arithmetic operations.
 
-5.imm[11:0] ( bits 31:20) :
+5. imm[11:0] ( bits 31:20) :
  This 12-bit immediate value is sign-extended and used directly as part of the operation.
 It serves as a constant operand for immediate operations or an offset for memory access.
 
@@ -310,13 +310,13 @@ Common I -Type instructions :
 
  S-Type instructions are primarily used for store operations, where data from a register is stored into memory at a specified address.
 
-1.opcode (bits 6:0) :
+1. opcode (bits 6:0) :
  It identifies the general operation
 
 2. imm[4:0] (bits 11:7) :
  Lower 5 bits of the 12-bit immediate (offset)
 
-3.funct3 (bits 14:12) :
+3. funct3 (bits 14:12) :
  specifies the type of store like word, byte,halfword etc.,
 
 4. rs1 (bits 19 :15 ) :
