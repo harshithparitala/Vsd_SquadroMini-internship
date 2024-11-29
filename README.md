@@ -440,6 +440,8 @@ Common J-Type instructions:
 
 ## 32-bit instructions from application (counterdown clock):
 
+![15 instr](https://github.com/user-attachments/assets/025ed997-7162-426f-aa1a-eaac5449bad6)
+
 1
 -
 
