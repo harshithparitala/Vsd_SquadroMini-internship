@@ -221,9 +221,9 @@ In the base RV32I ISA, there are four core instruction formats (R/I/S/U), as sho
 1. R type:
 
 
-This diagram represents the R-Type instruction format in the RISC-V Instruction Set Architecture (ISA). R-Type instructions are typically used for register-to-register operations
+  This diagram represents the R-Type instruction format in the RISC-V Instruction Set       Architecture (ISA). R-Type instructions are typically used for register-to-register operations
 
- 1.Opcode (bits 6-0):
+  1.Opcode (bits 6-0):
 
 The 7-bit opcode identifies the type of operation and the instruction format. For R-Type instructions, the opcode specifies that the instruction is register-based.
 
