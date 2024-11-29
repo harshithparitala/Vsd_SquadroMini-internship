@@ -408,7 +408,7 @@ funct3 examples in B-Type:
 
 6.J-Type:
 -
-
+![image](https://github.com/user-attachments/assets/5fa4d127-0de3-45e7-8305-d116a979ebae)
 
 J-Type instructions are used for unconditional jumps ,these are also  used for control flow, such as implementing function calls or jumping to a specific instruction
 
