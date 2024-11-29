@@ -320,7 +320,7 @@ Common I -Type instructions :
  specifies the type of store like word, byte,halfword etc.,
 
 4. rs1 (bits 19 :15 ) :
- specifies the source register for the operation.
+ specifies the first source register for the operation.
 
 5. rs2 (bits 24:20) :
  specifies the source register containing the value to be stored in memory.
@@ -338,7 +338,7 @@ Common S-Type Instructions
 
 4.U-Type :
 -
-
+![image](https://github.com/user-attachments/assets/fca113b5-0577-4955-a24f-d5454a9aa0a6)
 
 U-Type format is used for instructions like LUI (Load Upper Immediate) and AUIPC (Add Upper Immediate to PC)
 
@@ -357,5 +357,34 @@ Common U-Type Instrutions:
 |------------------|-----------------------|---------------------------------------------------------|
 | `LUI`            | `0110111`            | Load Upper Immediate                                    |
 | `AUIPC`          | `0010111`            | Add Upper Immediate to Program Counter (PC)            |
+
+
+There are a further two variants of the instruction formats (B/J) based on the handling of immediates .
+
+5.B-Type:
+-
+B-Type instructions enable branching (jumping) to another location in the code, determined by the offset in the instruction.These instructions check specific conditions and branch (jump) to a target address if the condition is satisfied. If the condition is not met, the program continues with the next sequential instruction.
+
+1.opcode(bits 6:0) :
+ It identifies the general operation
+2.imm[11] (bit 7) :
+ Represents one of the middle bits of the immediate value.
+3.imm[4:1] (bits 11:8) :
+ Contributes the lower bits of the branch offset.
+4.funct3 (bits 14:12) :
+ specifies the branch condition that determines how the values in the source registers (rs1 and rs2) are compared.
+5.rs1 (bits 19:15) :
+ specifies the first source register for comparision
+6.rs2 (bits 24:20) :
+ specifies the second source register for comparision
+7.imm[10:5] (bits 30:25) :
+ 
+8.imm[12] (bit 31) :
+
+
+
+
+
+
 
 </details>
