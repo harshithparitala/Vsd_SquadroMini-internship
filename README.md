@@ -306,10 +306,12 @@ Common I -Type instructions :
 
 3.S-Type:
 -
+![image](https://github.com/user-attachments/assets/e69f40bc-c431-4334-b77a-a5f1286a4431)
+
  S-Type instructions are primarily used for store operations, where data from a register is stored into memory at a specified address.
 
 1.opcode (bits 6:0) :
- It identifies the general geration
+ It identifies the general operation
 
 2. imm[4:0] (bits 11:7) :
  Lower 5 bits of the 12-bit immediate (offset)
@@ -334,6 +336,26 @@ Common S-Type Instructions
 | `sh`           | `0100011`   | `001`      | Store Halfword (16-bit).            |
 | `sb`           | `0100011`   | `000`      | Store Byte (8-bit).                 |
 
+4.U-Type :
+-
 
+
+U-Type format is used for instructions like LUI (Load Upper Immediate) and AUIPC (Add Upper Immediate to PC)
+
+1.opcode(bits 6:0) :
+ It identifies the general operation
+
+2.rd(bits 11:7) :
+ It specifies the Destination register which is used to store the reult of the operation
+
+3.imm[31:12] (bits 31:12) :
+ 20-bit immediate value (constant) used in the instruction. It is stored in the upper 20 bits of the target register.
+
+Common U-Type Instrutions:
+--
+| **Instruction** | **Opcode (Bits 6–0)** | **Description**                                         |
+|------------------|-----------------------|---------------------------------------------------------|
+| `LUI`            | `0110111`            | Load Upper Immediate                                    |
+| `AUIPC`          | `0010111`            | Add Upper Immediate to Program Counter (PC)            |
 
 </details>
