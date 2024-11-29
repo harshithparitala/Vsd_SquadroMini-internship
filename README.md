@@ -221,7 +221,50 @@ In the base RV32I ISA, there are four core instruction formats (R/I/S/U), as sho
 1. R type:
 
 
+This diagram represents the R-Type instruction format in the RISC-V Instruction Set Architecture (ISA). R-Type instructions are typically used for register-to-register operations
 
+1.Opcode (bits 6-0):
+
+The 7-bit opcode identifies the type of operation and the instruction format. For R-Type instructions, the opcode specifies that the instruction is register-based.
+
+2. rd( bits 11:7):
+   This bit is used for designation register where the output of the operation is written.
+3. funct3( bits 14:12) :
+   This 3 bit is used for differentiate between categories of operations within the same opcode.
+   R type operations:
+   
+   | **funct3** | **Operation**                      |
+|------------|------------------------------------|
+| `000`      | Add / Sub (depends on `funct7`)   |
+| `001`      | Shift Left Logical (SLL)          |
+| `010`      | Set Less Than (SLT)               |
+| `011`      | Set Less Than Unsigned (SLTU)     |
+| `100`      | XOR                               |
+| `101`      | Shift Right (Logical/Arithmetic; depends on `funct7`) |
+| `110`      | OR                                |
+| `111`      | AND                               |
+
+4. rs1(bits 19:15) :
+ It specifies the first source register for the operation.
+5. rs2(bits 24:20) :
+ It specifies the second source register for the operation.
+6. funct7(bits 31:25) :
+ It provides additional differentiation between instructions that use the same opcode and fuct3.
+
+   Examples for R Type operation.
+
+| **funct7**  | **funct3** | **Operation**                        |
+|-------------|------------|--------------------------------------|
+| `0000000`   | `000`      | Add                                 |
+| `0100000`   | `000`      | Sub                                 |
+| `0000000`   | `001`      | Shift Left Logical (SLL)            |
+| `0000000`   | `010`      | Set Less Than (SLT)                 |
+| `0000000`   | `011`      | Set Less Than Unsigned (SLTU)       |
+| `0000000`   | `100`      | XOR                                 |
+| `0000000`   | `101`      | Shift Right Logical (SRL)           |
+| `0100000`   | `101`      | Shift Right Arithmetic (SRA)        |
+| `0000000`   | `110`      | OR                                  |
+| `0000000`   | `111`      | AND                                 |
 
 
 </details>
