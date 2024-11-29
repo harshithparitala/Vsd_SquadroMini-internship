@@ -363,6 +363,8 @@ There are a further two variants of the instruction formats (B/J) based on the h
 
 5.B-Type:
 -
+![image](https://github.com/user-attachments/assets/f332980d-bbbd-47aa-9635-fdc77de1d97f)
+
 B-Type instructions enable branching (jumping) to another location in the code, determined by the offset in the instruction.These instructions check specific conditions and branch (jump) to a target address if the condition is satisfied. If the condition is not met, the program continues with the next sequential instruction.
 
 1.opcode(bits 6:0) :
