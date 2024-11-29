@@ -271,6 +271,8 @@ Examples for R Type operation.
 2.I Type :
 --
 
+![image](https://github.com/user-attachments/assets/291e132c-afb6-46c2-a34c-9e46c2a845de)
+
 I-Type instructions are used for operations involving immediate values, such as arithmetic with constants, memory access (e.g., loads), and control flow (e.g., jumps).
 
 Breakdown of the Fields:
