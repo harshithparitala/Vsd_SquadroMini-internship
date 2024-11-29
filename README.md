@@ -198,3 +198,17 @@ Debugging the Assembly Language instructions :
 
 
 </details>
+
+<details>
+<summary><b>Task 3:</b> Various RISCV instruction type and 32 bit instruction code for instructions from application code  </summary>   
+<br>
+
+
+
+
+
+
+
+
+
+</details>
