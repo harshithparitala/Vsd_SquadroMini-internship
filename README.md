@@ -217,15 +217,14 @@ There are 6 types of instruction types in RISCV ISA
 In the base RV32I ISA, there are four core instruction formats (R/I/S/U), as shown in Base instruction formats. All are a fixed 32 bits in length.
 
 ![image](https://github.com/user-attachments/assets/47b33518-df07-42ce-9922-4530c16492e9)
-
 1. R type:
-
+   -------
 ![image](https://github.com/user-attachments/assets/6bcad23c-667d-4fa1-ba98-e5c6d82f3b12)
 
   This diagram represents the R-Type instruction format in the RISC-V Instruction Set       
     Architecture (ISA). R-Type instructions are typically used for register-to-register operations
 
-   1.Opcode (bits 6-0):
+ 1.Opcode (bits 6-0):
 
 The 7-bit opcode identifies the type of operation and the instruction format. For R-Type instructions, the opcode specifies that the instruction is register-based.
 
