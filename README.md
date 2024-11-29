@@ -214,7 +214,7 @@ There are 6 types of instruction types in RISCV ISA
  5.  U-Type (Upper Immediate Type)
  6.   J-Type (Jump Type)
 
-
+In the base RV32I ISA, there are four core instruction formats (R/I/S/U), as shown in Base instruction formats. All are a fixed 32 bits in length.
 
 
 
