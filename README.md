@@ -203,6 +203,16 @@ Debugging the Assembly Language instructions :
 <summary><b>Task 3:</b> Various RISCV instruction type and 32 bit instruction code for instructions from application code  </summary>   
 <br>
 
+RISCV Instruction types
+--
+
+There are 6 types of instruction types in RISCV ISA
+ 1. R-Type (Register Type)
+ 2.  I-Type (Immediate Type)
+ 3.  S-Type (Store Type)
+ 4.  B-Type (Branch Type)
+ 5.  U-Type (Upper Immediate Type)
+ 6.   J-Type (Jump Type)
 
 
 
