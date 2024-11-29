@@ -216,6 +216,9 @@ There are 6 types of instruction types in RISCV ISA
 
 In the base RV32I ISA, there are four core instruction formats (R/I/S/U), as shown in Base instruction formats. All are a fixed 32 bits in length.
 
+![image](https://github.com/user-attachments/assets/47b33518-df07-42ce-9922-4530c16492e9)
+
+1. R type:
 
 
 
