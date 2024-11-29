@@ -267,4 +267,46 @@ Examples for R Type operation.
 | `0100000`   | `101`      | Shift Right Arithmetic (SRA)        |
 | `0000000`   | `110`      | OR                                  |
 | `0000000`   | `111`      | AND                                 |
+
+2.I Type :
+--
+
+I-Type instructions are used for operations involving immediate values, such as arithmetic with constants, memory access (e.g., loads), and control flow (e.g., jumps).
+
+Breakdown of the Fields:
+-
+1.opcode( bits 6:0) :
+
+ This 7 bits are used to identify the general operation type 
+ 
+2. rd (bits 11:7) :
+
+ It specifies the Destination register which is used to store the result of operation
+
+3.funct3(bits 14:12) :
+
+ It specifies the operation to perform such as load , immediate arthematic etc.,
+
+4. rs1 (bits 19 :15 ) :
+
+ specifies the source register for the operation. For example, it provides the base address for memory instructions or a source operand for arithmetic operations.
+
+5.imm[11:0] ( bits 31:20) :
+
+ This 12-bit immediate value is sign-extended and used directly as part of the operation.
+It serves as a constant operand for immediate operations or an offset for memory access.
+
+Common I -Type instructions :
+-
+| **Instruction** | **opcode** | **funct3** | **Description**                       |
+|-----------------|------------|------------|---------------------------------------|
+| `addi`          | `0010011`  | `000`      | Add immediate to register (`rd = rs1 + imm`). |
+| `slti`          | `0010011`  | `010`      | Set if less than immediate (signed). |
+| `andi`          | `0010011`  | `111`      | Bitwise AND with immediate.          |
+| `lw`            | `0000011`  | `010`      | Load word from memory.               |
+| `lh`            | `0000011`  | `001`      | Load halfword from memory.           |
+| `jalr`          | `1100111`  | `000`      | Jump and link register (indirect jump). |
+
+
+
 </details>
