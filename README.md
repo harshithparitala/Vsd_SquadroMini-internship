@@ -440,6 +440,7 @@ Common J-Type instructions:
 
 ## 32-bit instructions from application (counterdown clock):
 
-1.
+1
 -
+
 </details>
