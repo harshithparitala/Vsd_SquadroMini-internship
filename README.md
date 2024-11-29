@@ -409,4 +409,33 @@ funct3 examples in B-Type:
 6.J-Type:
 -
 
+
+J-Type instructions are used for unconditional jumps ,these are also  used for control flow, such as implementing function calls or jumping to a specific instruction
+
+1.opcode(bits 6:0) :
+ identifies the general operation
+
+2.rd (bits 11:7) :
+ Holds the return address (PC + 4), allowing the program to return to this location after completing the jump.
+
+3.imm[19:12] (bits 19:12) :
+ Bits 19 through 12 of the immediate value.
+
+4.imm[11] (bit 20) :
+ Bit 11 of the intermediate Value
+
+5.imm[10:1] (bits 10:1) :
+ Bits 10 through 1 of the immediate value.
+
+6.imm[20] (bit 31) :
+ The 21st (MSB) bit of the 21-bit immediate (used for sign extension).
+
+Common J-Type instructions:
+-
+
+| **Instruction** | **Opcode (Bits 6–0)** | **Registers** | **Description**                           |
+|------------------|-----------------------|---------------|-------------------------------------------|
+| `JAL`           | `1101111`            | `rd`          | Jump and Link: Save return address and jump to target address |
+
+
 </details>
