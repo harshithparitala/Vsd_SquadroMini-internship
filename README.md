@@ -462,4 +462,89 @@ imm = -32 (signed 12-bit: 111111111110)
 
 11111111111000010 |  000  |   00010 |  0010011
 
+2.lw a5,12(sp)
+-
+I-Type Instruction
+
+imm[11:0]  | rs1   | funct3 | rd    | opcode
+
+imm[11:0]	000000001100 (12)
+
+rs1	00010 (sp)
+
+funct3	010 (lw)
+
+rd	01111 (a5)
+
+opcode	0000011
+
+32-bit representation:
+
+00000000110000010 | 010 | 01111 | 0000011
+
+3.jal ra,10184
+-
+J-Type (Jump)
+
+ imm[20|10:1|11|19:12] | rd | opcode
+
+opcode = 1101111
+
+rd = x1 (ra)
+
+imm = 10184
+
+imm[20] = 0
+
+imm[10:1] = 1111101000
+
+imm[11] = 1
+
+imm[19:12] = 1100
+
+32-bit representation:
+
+000000110011001001 | 00001 | 1101111
+
+4.ld a5,88(a0)
+-
+I-Type (Load, RV64I)
+
+imm[11:0] | rs1 | funct3 | rd | opcode
+
+opcode = 0000011
+
+funct3 = 011 (ld)
+
+rd = x15 (a5)
+
+rs1 = x10 (a0)
+
+imm = 88 (000000010110)
+
+32 bit representation:
+
+00000001011001010 |011 |   01111 |   0000011
+
+5.jalr a5
+-
+I-Type (Jump Register)
+
+imm[11:0] | rs1 | funct3 | rd | opcode
+
+opcode = 1100111
+
+funct3 = 000 (jalr)
+
+rd = x15 (a5)
+
+rs1 = x15 (a5)
+
+imm = 0
+
+32 bit-representation:
+
+00000000000001111 | 000  |   01111  | 1100111
+
+6.
 </details>
