@@ -458,7 +458,7 @@ rs1 = x2 (sp)
 
 imm = -32 (signed 12-bit: 111111111110)
 
-32 bit representation:
+32 - bit representation:
 
 11111111111000010 |  000  |   00010 |  0010011
 
@@ -486,7 +486,7 @@ opcode	0000011
 -
 J-Type (Jump)
 
- imm[20|10:1|11|19:12] | rd | opcode
+imm[20|10:1|11|19:12] | rd | opcode
 
 opcode = 1101111
 
@@ -522,7 +522,7 @@ rs1 = x10 (a0)
 
 imm = 88 (000000010110)
 
-32 bit representation:
+32 - bit representation:
 
 00000001011001010 |011 |   01111 |   0000011
 
@@ -542,9 +542,78 @@ rs1 = x15 (a5)
 
 imm = 0
 
-32 bit-representation:
+32 - bit-representation:
 
 00000000000001111 | 000  |   01111  | 1100111
 
-6.
+6.srai s2,s2,0x3
+-
+I-Type Instruction
+
+imm[11:0] | rs1 | funct3 | rd | opcode
+
+imm[11:5]	0100000
+
+imm[4:0]	00011 (shift amount = 3)
+
+rs1	10010 (s2)
+
+funct3	101 (srai)
+
+rd	10010 (s2)
+
+opcode	0010011
+
+32 - bit representation:
+
+01000000001110010 | 101 | 10010 | 0010011
+
+7.bne s2, s1, 10330
+-
+B-Type (Conditional Branch)
+
+imm[12|10:5] | rs2 | rs1 | funct3 | imm[4:1|11] | opcode
+
+opcode = 1100011
+
+
+funct3 = 001 (bne)
+
+rs1 = x18 (s2)
+
+rs2 = x9 (s1)
+
+imm = 10330, split as:
+
+imm[12] = 1
+
+imm[10:5] = 100011
+
+imm[4:1] = 0101
+
+imm[11] = 0
+
+32 - bit representation:
+
+1| 100011   |   01001  |10010 |  001  |  0101| 0  | 1100011
+
+8.auipc a5, 0xfffff0
+---------
+U-Type (Upper Immediate)
+
+imm[31:12] | rd | opcode
+
+opcode = 0010111
+
+rd = x15 (a5)
+
+imm = 0xfffff0 (11111111111100000)
+
+32 - bit representation:
+
+11111111111100000 | 01111 | 0010111
+
+9.
+
+
 </details>
