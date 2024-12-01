@@ -442,7 +442,17 @@ Common J-Type instructions:
 
 ![15 instr](https://github.com/user-attachments/assets/025ed997-7162-426f-aa1a-eaac5449bad6)
 
-1
+1 . addi sp,sp -32
 -
+imm[11:0] | rs1 | funct3 | rd | opcode
+
+opcode = 0010011
+funct3 = 000 (addi)
+rd = x2 (sp)
+rs1 = x2 (sp)
+imm = -32 (signed 12-bit: 111111111110)
+
+imm[11:0]  | rs1   | funct3 | rd    | opcode
+11111111111000010 |  000  |   00010 |  0010011
 
 </details>
