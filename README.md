@@ -679,7 +679,56 @@ opcode	1100011
 32 - bit representation:
 
 ``00001000101010001 | 001 | 00101 | 1100011``
-12.
+
+12.sd a6, 80(sp)
+-
+S-Type Instruction
+
+imm[11:5]	0000001
+
+rs2	00110 (a6)
+
+rs1	00001 (sp)
+
+funct3	011 (sd)
+
+imm[4:0]	01000
+
+opcode	0100011
+
+32- bit representation:
+
+``00000010011000001 | 011 | 00001 | 0100011``
+
+13.lui a3, 0xffff
+-
+U-Type Instruction
+
+imm[31:12]	111111111111
+rd	00011 (a3)
+opcode	0110111
+
+32- bit representation:
+
+``111111111111 | 00011 | 0110111``
+
+14.or a2, a4, -4(a4)
+-
+R-Type Instruction
+
+rs2	00100 (a4)
+rs1	00100 (a4)
+funct3	000 (or)
+rd	00010 (a2)
+funct7	0000000
+opcode	0110011
+
+32- bit representation:
+
+``000000000100 | 00100 | 000 | 00010 | 0110011 ``
+
+15.
+
 
 
 </details>
