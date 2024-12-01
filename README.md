@@ -359,7 +359,7 @@ Common U-Type Instrutions:
 | `AUIPC`          | `0010111`            | Add Upper Immediate to Program Counter (PC)            |
 
 
-There are a further two variants of the instruction formats (B/J) based on the handling of immediates .
+There are further two variants of the instruction formats (B/J) based on the handling of immediates .
 
 5.B-Type:
 -
