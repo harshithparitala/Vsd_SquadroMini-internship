@@ -729,7 +729,21 @@ opcode	0110011
 
 15.lbu a2,-4(a4)
 -
+I-Type  Instruction:
 
+imm[11:0]	111111111100
+
+rs1	01000 (a4)
+
+funct3	100 (lbu)
+
+rd	00010 (a2)
+
+opcode	0000011
+
+32- bit reprsentation:
+
+``111111111100 | 01000 | 100 | 00010 | 0000011``
 
 
 
