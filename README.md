@@ -446,9 +446,9 @@ Common J-Type instructions:
 -
 I-Type Instruction
 
-*imm[11:0] | rs1 | funct3 | rd | opcode
+imm[11:0] | rs1 | funct3 | rd | opcode
 
-opcode = 0010011
+- *opcode* = 0010011
 
 funct3 = 000 (addi)
 
