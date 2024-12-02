@@ -470,13 +470,13 @@ imm[11:0]  | rs1   | funct3 | rd    | opcode
 
 - *imm[11:0]*	000000001100 (12)
 
--*rs1*	00010 (sp)
+- *rs1*	00010 (sp)
 
--*funct3*	010 (lw)
+- *funct3*	010 (lw)
 
-rd	01111 (a5)
+- *rd*	01111 (a5)
 
--*opcode*	0000011
+- *opcode*	0000011
 
 32-bit representation:
 
@@ -488,19 +488,19 @@ J-Type (Jump)
 
 imm[20|10:1|11|19:12] | rd | opcode
 
--*opcode* = 1101111
+- *opcode* = 1101111
 
--*rd* = x1 (ra)
+- *rd* = x1 (ra)
 
--*imm* = 10184
+- *imm* = 10184
 
--*imm[20]* = 0
+- *imm[20]* = 0
 
--*imm[10:1]* = 1111101000
+- *imm[10:1]* = 1111101000
 
--*imm[11]* = 1
+- *imm[11]* = 1
 
--*imm[19:12]* = 1100
+- *imm[19:12]* = 1100
 
 32-bit representation:
 
@@ -512,15 +512,15 @@ I-Type (Load, RV64I)
 
 imm[11:0] | rs1 | funct3 | rd | opcode
 
--*opcode* = 0000011
+- *opcode* = 0000011
 
--*funct3* = 011 (ld)
+- *funct3* = 011 (ld)
 
--*rd* = x15 (a5)
+- *rd* = x15 (a5)
 
-*-rs1* = x10 (a0)
+- *rs1* = x10 (a0)
 
--*imm* = 88 (000000010110)
+- *imm* = 88 (000000010110)
 
 32 - bit representation:
 
@@ -532,15 +532,15 @@ I-Type (Jump Register)
 
 imm[11:0] | rs1 | funct3 | rd | opcode
 
--*opcode* = 1100111
+- *opcode* = 1100111
 
--*funct3* = 000 (jalr)
+- *funct3* = 000 (jalr)
 
--*rd* = x15 (a5)
+- *rd* = x15 (a5)
 
--*rs1* = x15 (a5)
+- *rs1* = x15 (a5)
 
--*imm* = 0
+- *imm* = 0
 
 32 - bit-representation:
 
@@ -552,17 +552,17 @@ I-Type Instruction
 
 imm[11:0] | rs1 | funct3 | rd | opcode
 
--*imm[11:5]*	0100000
+- *imm[11:5]*	0100000
 
--*imm[4:0]*	00011 (shift amount = 3)
+- *imm[4:0]*	00011 (shift amount = 3)
 
--*rs1*	10010 (s2)
+- *rs1*	10010 (s2)
 
--*funct3*	101 (srai)
+- *funct3*	101 (srai)
 
--*rd*	10010 (s2)
+- *rd*	10010 (s2)
 
--*opcode*	0010011
+- *opcode*	0010011
 
 32 - bit representation:
 
@@ -574,24 +574,24 @@ B-Type (Conditional Branch)
 
 imm[12|10:5] | rs2 | rs1 | funct3 | imm[4:1|11] | opcode
 
-opcode = 1100011
+- *opcode* = 1100011
 
 
-funct3 = 001 (bne)
+- *funct3* = 001 (bne)
 
-rs1 = x18 (s2)
+- *rs1* = x18 (s2)
 
-rs2 = x9 (s1)
+- *rs2* = x9 (s1)
 
-imm = 10330, split as:
+- *imm* = 10330, split as:
 
-imm[12] = 1
+- *imm[12]* = 1
 
-imm[10:5] = 100011
+- *imm[10:5]* = 100011
 
-imm[4:1] = 0101
+- *imm[4:1]* = 0101
 
-imm[11] = 0
+- *imm[11]* = 0
 
 32 - bit representation:
 
@@ -603,11 +603,11 @@ U-Type (Upper Immediate)
 
 imm[31:12] | rd | opcode
 
-opcode = 0010111
+- *opcode* = 0010111
 
-rd = x15 (a5)
+- *rd* = x15 (a5)
 
-imm = 0xfffff0 (11111111111100000)
+- *imm* = 0xfffff0 (11111111111100000)
 
 32 - bit representation:
 
@@ -618,21 +618,21 @@ imm = 0xfffff0 (11111111111100000)
 beqz is a pseudo-instruction for beq a5, x0, offset.
 It checks if a5 is equal to 0 (x0) and branches to the offset 100c8.
 
-imm[12]	1
+- *imm[12]*	1
 
-imm[10:5]	000110
+- *imm[10:5]*	000110
 
-rs2	00000
+- *rs2*	00000
 
-rs1	01111
+- *rs1*	01111
 
-funct3	000
+- *funct3*	000
 
-imm[4:1]	1010
+- *imm[4:1]*	1010
 
-imm[11]	1
+- *imm[11]*	1
 
-opcode	1100011
+- *opcode*	1100011
 
 32-bit representation:
 
@@ -642,15 +642,15 @@ opcode	1100011
 -
 I-Type Instruction
 
-imm[11:0]	000000000000 (0)
+- *imm[11:0]*	000000000000 (0)
 
-rs1	00000 (zero)
+- *rs1*	00000 (zero)
 
-funct3	000 (addi)
+- *funct3*	000 (addi)
 
-rd	01010 (a0)
+- *rd*	01010 (a0)
 
-opcode	0010011
+- *opcode*	0010011
 
 32-bit representation:
 
@@ -660,21 +660,21 @@ opcode	0010011
 -
 B-Type Instruction
 
-imm[12]	0
+- *imm[12]*	0
 
-imm[10:5]	100010
+- *imm[10:5]*	100010
 
-rs2	00000 (zero)
+- *rs2*	00000 (zero)
 
-rs1	01001 (s1)
+- *rs1*	01001 (s1)
 
-funct3	001 (bne)
+- *funct3*	001 (bne)
 
-imm[4:1]	0001
+- *imm[4:1]*	0001
 
-imm[11]	1
+- *imm[11]*	1
 
-opcode	1100011
+- *opcode*	1100011
 
 32 - bit representation:
 
@@ -684,17 +684,17 @@ opcode	1100011
 -
 S-Type Instruction
 
-imm[11:5]	0000001
+- *imm[11:5]*	0000001
 
-rs2	00110 (a6)
+- *rs2*	00110 (a6)
 
-rs1	00001 (sp)
+- *rs1*	00001 (sp)
 
-funct3	011 (sd)
+- *funct3*	011 (sd)
 
-imm[4:0]	01000
+- *imm[4:0]*	01000
 
-opcode	0100011
+- *opcode*	0100011
 
 32- bit representation:
 
@@ -704,9 +704,11 @@ opcode	0100011
 -
 U-Type Instruction
 
-imm[31:12]	111111111111
-rd	00011 (a3)
-opcode	0110111
+*imm[31:12]*	111111111111
+
+- *rd*	00011 (a3)
+
+- *opcode*	0110111
 
 32- bit representation:
 
@@ -716,12 +718,17 @@ opcode	0110111
 -
 R-Type Instruction
 
-rs2	00100 (a4)
-rs1	00100 (a4)
-funct3	000 (or)
-rd	00010 (a2)
-funct7	0000000
-opcode	0110011
+- *rs2*	00100 (a4)
+
+- *rs1*	00100 (a4)
+
+- *funct3*	000 (or)
+
+- *rd*	00010 (a2)
+
+- *funct7*	0000000
+
+- *opcode*	0110011
 
 32- bit representation:
 
@@ -731,15 +738,15 @@ opcode	0110011
 -
 I-Type  Instruction:
 
-imm[11:0]	111111111100
+- *imm[11:0]*	111111111100
 
-rs1	01000 (a4)
+- *rs1*	01000 (a4)
 
-funct3	100 (lbu)
+- *funct3*	100 (lbu)
 
-rd	00010 (a2)
+- *rd*	00010 (a2)
 
-opcode	0000011
+- *opcode*	0000011
 
 32- bit reprsentation:
 
