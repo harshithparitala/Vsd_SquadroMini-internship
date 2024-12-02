@@ -450,13 +450,13 @@ imm[11:0] | rs1 | funct3 | rd | opcode
 
 - *opcode* = 0010011
 
-funct3 = 000 (addi)
+- *funct3* = 000 (addi)
 
-rd = x2 (sp)
+- *rd* = x2 (sp)
 
-rs1 = x2 (sp)
+- *rs1* = x2 (sp)
 
-imm = -32 (signed 12-bit: 111111111110)
+- *imm* = -32 (signed 12-bit: 111111111110)
 
 32 - bit representation:
 
@@ -468,15 +468,15 @@ I-Type Instruction
 
 imm[11:0]  | rs1   | funct3 | rd    | opcode
 
-imm[11:0]	000000001100 (12)
+- *imm[11:0]*	000000001100 (12)
 
-rs1	00010 (sp)
+-*rs1*	00010 (sp)
 
-funct3	010 (lw)
+-*funct3*	010 (lw)
 
 rd	01111 (a5)
 
-opcode	0000011
+-*opcode*	0000011
 
 32-bit representation:
 
@@ -488,19 +488,19 @@ J-Type (Jump)
 
 imm[20|10:1|11|19:12] | rd | opcode
 
-opcode = 1101111
+-*opcode* = 1101111
 
-rd = x1 (ra)
+-*rd* = x1 (ra)
 
-imm = 10184
+-*imm* = 10184
 
-imm[20] = 0
+-*imm[20]* = 0
 
-imm[10:1] = 1111101000
+-*imm[10:1]* = 1111101000
 
-imm[11] = 1
+-*imm[11]* = 1
 
-imm[19:12] = 1100
+-*imm[19:12]* = 1100
 
 32-bit representation:
 
@@ -512,15 +512,15 @@ I-Type (Load, RV64I)
 
 imm[11:0] | rs1 | funct3 | rd | opcode
 
-opcode = 0000011
+-*opcode* = 0000011
 
-funct3 = 011 (ld)
+-*funct3* = 011 (ld)
 
-rd = x15 (a5)
+-*rd* = x15 (a5)
 
-rs1 = x10 (a0)
+*-rs1* = x10 (a0)
 
-imm = 88 (000000010110)
+-*imm* = 88 (000000010110)
 
 32 - bit representation:
 
@@ -532,15 +532,15 @@ I-Type (Jump Register)
 
 imm[11:0] | rs1 | funct3 | rd | opcode
 
-opcode = 1100111
+-*opcode* = 1100111
 
-funct3 = 000 (jalr)
+-*funct3* = 000 (jalr)
 
-rd = x15 (a5)
+-*rd* = x15 (a5)
 
-rs1 = x15 (a5)
+-*rs1* = x15 (a5)
 
-imm = 0
+-*imm* = 0
 
 32 - bit-representation:
 
@@ -552,17 +552,17 @@ I-Type Instruction
 
 imm[11:0] | rs1 | funct3 | rd | opcode
 
-imm[11:5]	0100000
+-*imm[11:5]*	0100000
 
-imm[4:0]	00011 (shift amount = 3)
+-*imm[4:0]*	00011 (shift amount = 3)
 
-rs1	10010 (s2)
+-*rs1*	10010 (s2)
 
-funct3	101 (srai)
+-*funct3*	101 (srai)
 
-rd	10010 (s2)
+-*rd*	10010 (s2)
 
-opcode	0010011
+-*opcode*	0010011
 
 32 - bit representation:
 
