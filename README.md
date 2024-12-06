@@ -758,6 +758,12 @@ I-Type  Instruction:
 <br>
 
 
+![iverilog install](https://github.com/user-attachments/assets/9450ad57-a250-4055-bdb8-511628e50a0a)
+
+![vcd file command](https://github.com/user-attachments/assets/18b922c3-3d36-4079-8e77-f6f7387bd409)
+
+![gtkwave](https://github.com/user-attachments/assets/5887f944-523f-491a-aff1-5ae5904ad603)
+
 
 
 
