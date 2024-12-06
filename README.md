@@ -765,12 +765,30 @@ I-Type  Instruction:
 ![gtkwave](https://github.com/user-attachments/assets/5887f944-523f-491a-aff1-5ae5904ad603)
 
 
+![add gtk](https://github.com/user-attachments/assets/c77638af-47af-4407-b781-867d18cbf38a)
+
+![sub gtkwave](https://github.com/user-attachments/assets/0000b0f7-9d58-4271-822c-5cdff834e178)
 
 
+![And gtkwave](https://github.com/user-attachments/assets/fe6ded13-83ea-4bfa-80e5-f0034c6a22c7)
 
+![or gtkwave](https://github.com/user-attachments/assets/d01b0e04-cec4-4ff6-95df-e1669d159aaf)
 
+![xor gtkwave](https://github.com/user-attachments/assets/f62ee43d-b5da-488f-9851-8f2483b57305)
 
+![slt gtkwave](https://github.com/user-attachments/assets/121880c6-69a9-4b35-be07-3cd440daad7b)
 
+![addi gtkwave](https://github.com/user-attachments/assets/8414d1ef-22f1-4b9f-8414-08802b1b0a68)
+
+![sw gtkwave](https://github.com/user-attachments/assets/70c6306d-4a62-483f-8cc3-9260607e417c)
+
+![Srl gtkwave](https://github.com/user-attachments/assets/0f7c2e0e-f3dc-4a11-846d-2da9b78f5260)
+
+![beq gtkwave](https://github.com/user-attachments/assets/901dfb13-853c-41de-b11d-ea5dc9ca4c2a)
+
+![bne gtkwave](https://github.com/user-attachments/assets/c4d0039a-0e3c-4b82-8736-a565a464bb2e)
+
+![sll gtkwave](https://github.com/user-attachments/assets/ecff238a-ecc6-4a39-8714-bcfdbef912e0)
 
 
 
