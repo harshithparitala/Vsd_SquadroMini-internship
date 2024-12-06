@@ -752,6 +752,26 @@ I-Type  Instruction:
 
 ``111111111100 | 01000 | 100 | 00010 | 0000011``
 
+</details>
+<details>
+<summary><b>Task 4:</b> Functional simulation of RISC-V Core Verilog netlist and Testbench </summary>   
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </details>
+
