@@ -871,6 +871,18 @@ Target Address=Current PC+Offset
 
 ![bne gtkwave](https://github.com/user-attachments/assets/c4d0039a-0e3c-4b82-8736-a565a464bb2e)
 
+BNE (Branch Not Equal):
+
+Compares the values in R0 and R1.
+
+If R0 ≠ R1, the program counter (PC) branches to the target address.
+
+If R0 = R1, no branch occurs, and the PC continues sequentially.
+
+Offset = 20 (decimal).
+
+Branch Target Address=PC+Offset
+
 12.`` SLL R15, R1, R2``
 
 ![sll gtkwave](https://github.com/user-attachments/assets/ecff238a-ecc6-4a39-8714-bcfdbef912e0)
