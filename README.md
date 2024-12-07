@@ -887,6 +887,15 @@ Branch Target Address=PC+Offset
 
 ![sll gtkwave](https://github.com/user-attachments/assets/ecff238a-ecc6-4a39-8714-bcfdbef912e0)
 
+Shift Left Logical (SLL) instruction, which shifts the bits in R1 to the left by the amount specified in R2, with the result stored in R15.
+
+R1: original value to be shifted.
+
+R2: Specifies the shift amount.
+
+Output:
+
+The result (R15) is observed as 0x00000019 in EX_MEM_ALUOUT.
 
 
 
