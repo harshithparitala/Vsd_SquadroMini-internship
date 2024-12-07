@@ -823,7 +823,7 @@ Veifying instructions using Gtkwave :
 
 2.``SUB R7, R1, R2``
 
-![sub gtkwave](https://github.com/user-attachments/assets/0000b0f7-9d58-4271-822c-5cdff834e178)
+![sub gtkwave](https://github.com/user-attachments/assets/0aa6192b-4f81-4604-b09d-e1f1d7617324)
 
 3.``AND R8, R1, R3``
 
