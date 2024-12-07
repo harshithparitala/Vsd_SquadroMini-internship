@@ -819,7 +819,7 @@ Veifying instructions using Gtkwave :
 -
 1.``ADD R6, R2, R1``
 
-![add gtk](https://github.com/user-attachments/assets/c77638af-47af-4407-b781-867d18cbf38a)
+![add gtk](https://github.com/user-attachments/assets/19a0d4f4-a836-4880-8fbc-0b359449b384)
 
 2.``SUB R7, R1, R2``
 
