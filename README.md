@@ -855,6 +855,8 @@ offset 2 is added to the base address from R1 to compute the target memory addre
 
 ![Srl gtkwave](https://github.com/user-attachments/assets/0f7c2e0e-f3dc-4a11-846d-2da9b78f5260)
 
+Perform a logical right shift on the value in r11 by the number of bits specified in r2, and store the result in r16.
+
 10.``BEQ R0, R0, 15``
 
 ![beq gtkwave](https://github.com/user-attachments/assets/901dfb13-853c-41de-b11d-ea5dc9ca4c2a)
