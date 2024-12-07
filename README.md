@@ -778,7 +778,7 @@ Steps to perform functional simulation of RISC-V:
 
 As part of this internship, we are not writing the Verilog code ourselves instead, we are cloning the Verilog and testbench code from a reference GitHub repository.
 
-Refernce Github Repository:[iiitb_rv32i](https://github.com/vinayrayapati/rv32i/tree/main)
+Refernce Github Repository: [iiitb_rv32i](https://github.com/vinayrayapati/rv32i/tree/main)
 
 3.using leafpad copy the verilog and testbench code in respective files in the directory
 
@@ -839,11 +839,11 @@ Veifying instructions using Gtkwave :
 
 6.``SLT R1, R2, R4``
 
-![slt gtkwave](https://github.com/user-attachments/assets/121880c6-69a9-4b35-be07-3cd440daad7b)
+![slt gtkwave](https://github.com/user-attachments/assets/8191d7b8-c73f-4a66-9b23-ad62c6e00f80)
 
 7.``ADDI R12, R4, 5``
 
-![addi gtkwave](https://github.com/user-attachments/assets/8414d1ef-22f1-4b9f-8414-08802b1b0a68)
+![addi gtkwave](https://github.com/user-attachments/assets/faae3915-9462-42b6-9231-0a36180c63f6)
 
 8.``SW R3, R1, 2``
 
