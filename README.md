@@ -827,7 +827,7 @@ Veifying instructions using Gtkwave :
 
 3.``AND R8, R1, R3``
 
-![And gtkwave](https://github.com/user-attachments/assets/fe6ded13-83ea-4bfa-80e5-f0034c6a22c7)
+![and gtkwave](https://github.com/user-attachments/assets/fac6962c-000a-4f88-b7ba-61d542f1087c)
 
 4.``OR R9, R2, R5``
 
