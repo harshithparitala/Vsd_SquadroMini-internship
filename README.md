@@ -781,6 +781,7 @@ As part of this internship, we are not writing the Verilog code ourselves instea
 Refernce Github Repository:
 
 3.using leafpad copy the verilog and testbench code in respective files in the directory
+
 4.Simulate the Verilog code using
 
 ``iverilog -o harshith1_rv32i harshith1_rv32i.v harshith_rv32i_tb.v`` 
