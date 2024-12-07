@@ -831,11 +831,11 @@ Veifying instructions using Gtkwave :
 
 4.``OR R9, R2, R5``
 
-![or gtkwave](https://github.com/user-attachments/assets/d01b0e04-cec4-4ff6-95df-e1669d159aaf)
+![or gtkwave](https://github.com/user-attachments/assets/f1bad13c-7453-48cf-b5c8-89fecd460315)
 
 5.``XOR R10, R1, R4``
 
-![xor gtkwave](https://github.com/user-attachments/assets/f62ee43d-b5da-488f-9851-8f2483b57305)
+![xor gtkwave](https://github.com/user-attachments/assets/159a1b56-4811-4261-9102-7cf9d3819b69)
 
 6.``SLT R1, R2, R4``
 
