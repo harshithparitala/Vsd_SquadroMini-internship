@@ -848,6 +848,8 @@ Veifying instructions using Gtkwave :
 8.``SW R3, R1, 2``
 
 ![sw gtkwave](https://github.com/user-attachments/assets/70c6306d-4a62-483f-8cc3-9260607e417c)
+value in register R3 is stored into memory at an address calculated as the sum of the base address in register R1 and the offset 2.
+offset 2 is added to the base address from R1 to compute the target memory address (visible in the EX_MEM_ALU_OUT signal).
 
 9.``SRL r16, r11, r2``
 
