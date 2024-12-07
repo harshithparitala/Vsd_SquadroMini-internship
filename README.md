@@ -757,12 +757,34 @@ I-Type  Instruction:
 <summary><b>Task 4:</b> Functional simulation of RISC-V Core Verilog netlist and Testbench </summary>   
 <br>
 
+In this task, we will perform functional simulation of RISC-V instructions modeled as a Verilog netlist and observe the output waveforms using GTKWave.
 
+We will use iverilog and Gtkwave tools
+
+How it works?
+-
+You write Verilog code and run simulations using Icarus Verilog. The simulator generates a Value Change Dump (VCD) or other waveform file formats.
+These waveform files are then loaded into GTKWave for graphical analysis of the signal behavior, helping you verify your design's functionality and timing.
+
+Installing iverilog using command ``sudo apt install iverilog gtkwave``
 ![iverilog install](https://github.com/user-attachments/assets/9450ad57-a250-4055-bdb8-511628e50a0a)
+
+Steps to perform functional simulation of RISC-V:
+-
+1. create a new directory using your name as ``mkdir harshith1``.
+2. create two files using command ``touch`` and give them names as ``harshith1_rv32i.v``and ``harshith1_rv32i_tb.v``.These are used for verilog and testbench files respectively.
+
+As part of this internship, we are not writing the Verilog code ourselves instead, we are cloning the Verilog and testbench code from a reference GitHub repository.
+
+3.using leafpad copy the verilog and testbench code in respective files in the directory
+4.Simulate the Verilog code using ``iverilog -o harshith1_rv32i harshith1_rv32i.v harshith_rv32i_tb.v`` it will create iiitb_rv32i.vcd file which is used for gtkwave.
 
 ![vcd file command](https://github.com/user-attachments/assets/18b922c3-3d36-4079-8e77-f6f7387bd409)
 
+5.Open the gtkwave using command ``gtkwave iiitb_rv32i.vcd``
+
 ![gtkwave](https://github.com/user-attachments/assets/5887f944-523f-491a-aff1-5ae5904ad603)
+
 
 
 ![add gtk](https://github.com/user-attachments/assets/c77638af-47af-4407-b781-867d18cbf38a)
