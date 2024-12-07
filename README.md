@@ -861,6 +861,12 @@ Perform a logical right shift on the value in r11 by the number of bits specifie
 
 ![beq gtkwave](https://github.com/user-attachments/assets/901dfb13-853c-41de-b11d-ea5dc9ca4c2a)
 
+This instruction compares the values in registers R0 and R0.
+If the values are equal, the program counter (PC) is updated to branch to a target address determined by the offset
+
+Target Address=Current PC+Offset
+
+
 11.``BNE R0, R1, 20``
 
 ![bne gtkwave](https://github.com/user-attachments/assets/c4d0039a-0e3c-4b82-8736-a565a464bb2e)
