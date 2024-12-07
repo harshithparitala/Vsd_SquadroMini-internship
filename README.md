@@ -777,8 +777,14 @@ Steps to perform functional simulation of RISC-V:
 
 As part of this internship, we are not writing the Verilog code ourselves instead, we are cloning the Verilog and testbench code from a reference GitHub repository.
 
+Refernce Github Repository:
+
 3.using leafpad copy the verilog and testbench code in respective files in the directory
-4.Simulate the Verilog code using ``iverilog -o harshith1_rv32i harshith1_rv32i.v harshith_rv32i_tb.v`` it will create iiitb_rv32i.vcd file which is used for gtkwave.
+4.Simulate the Verilog code using
+
+``iverilog -o harshith1_rv32i harshith1_rv32i.v harshith_rv32i_tb.v`` 
+
+it will create iiitb_rv32i.vcd file which is used for gtkwave.
 
 ![vcd file command](https://github.com/user-attachments/assets/18b922c3-3d36-4079-8e77-f6f7387bd409)
 
@@ -808,7 +814,7 @@ The given Verilog file contains instructions that are hard-coded, meaning the de
 3. To ensure correct simulation, you must use the hard-coded instruction encodings when working with the provided Verilog netlist and testbench.
 
 Veifying instructions using Gtkwave :
-
+-
 1.``ADD R6, R2, R1``
 
 ![add gtk](https://github.com/user-attachments/assets/c77638af-47af-4407-b781-867d18cbf38a)
