@@ -778,7 +778,7 @@ Steps to perform functional simulation of RISC-V:
 
 As part of this internship, we are not writing the Verilog code ourselves instead, we are cloning the Verilog and testbench code from a reference GitHub repository.
 
-Refernce Github Repository:
+Refernce Github Repository:[iiitb_rv32i](https://github.com/vinayrayapati/rv32i/tree/main)
 
 3.using leafpad copy the verilog and testbench code in respective files in the directory
 
