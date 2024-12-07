@@ -867,7 +867,7 @@ If the values are equal, the program counter (PC) is updated to branch to a targ
 Target Address=Current PC+Offset
 
 
-11.``BNE R0, R1, 20``
+11.``BNE R0, R1, 15``
 
 ![bne gtkwave](https://github.com/user-attachments/assets/c4d0039a-0e3c-4b82-8736-a565a464bb2e)
 
