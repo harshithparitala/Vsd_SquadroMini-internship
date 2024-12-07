@@ -773,6 +773,7 @@ Installing iverilog using command ``sudo apt install iverilog gtkwave``
 Steps to perform functional simulation of RISC-V:
 -
 1.create a new directory using your name as ``mkdir harshith1``.
+
 2.create two files using command ``touch`` and give them names as ``harshith1_rv32i.v``and ``harshith1_rv32i_tb.v``.These are used for verilog and testbench files respectively.
 
 As part of this internship, we are not writing the Verilog code ourselves instead, we are cloning the Verilog and testbench code from a reference GitHub repository.
