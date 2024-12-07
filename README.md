@@ -767,6 +767,7 @@ You write Verilog code and run simulations using Icarus Verilog. The simulator g
 These waveform files are then loaded into GTKWave for graphical analysis of the signal behavior, helping you verify your design's functionality and timing.
 
 Installing iverilog using command ``sudo apt install iverilog gtkwave``
+
 ![iverilog install](https://github.com/user-attachments/assets/9450ad57-a250-4055-bdb8-511628e50a0a)
 
 Steps to perform functional simulation of RISC-V:
@@ -785,30 +786,74 @@ As part of this internship, we are not writing the Verilog code ourselves instea
 
 ![gtkwave](https://github.com/user-attachments/assets/5887f944-523f-491a-aff1-5ae5904ad603)
 
+The given Verilog file contains instructions that are hard-coded, meaning the designer has used custom bit patterns for each instruction instead of following the standard RISC-V specification for bit encoding.
 
+| **Operation**      | **Description**                                       | **Standard RISC-V ISA** | **Hard-Coded ISA** |
+|---------------------|-------------------------------------------------------|-------------------------|---------------------|
+| **ADD R6, R2, R1**  | Adds the values in R2 and R1, stores result in R6     | `32'h00110333`         | `32'h02208300`      |
+| **SUB R7, R1, R2**  | Subtracts the value in R2 from R1, stores result in R7| `32'h402083b3`         | `32'h02209380`      |
+| **AND R8, R1, R3**  | Performs bitwise AND between R1 and R3, stores in R8  | `32'h0030f433`         | `32'h0230a400`      |
+| **OR R9, R2, R5**   | Performs bitwise OR between R2 and R5, stores in R9   | `32'h005164b3`         | `32'h02513480`      |
+| **XOR R10, R1, R4** | Performs bitwise XOR between R1 and R4, stores in R10 | `32'h0040c533`         | `32'h0240c500`      |
+| **SLT R1, R2, R4**  | Sets R1 to 1 if R2 < R4, else sets to 0               | `32'h0045a0b3`         | `32'h02415580`      |
+| **ADDI R12, R4, 5** | Adds immediate value 5 to R4, stores result in R12    | `32'h004120b3`         | `32'h00520600`      |
+| **BEQ R0, R0, 15**  | Branches to offset 15 if R0 equals R0                 | `32'h00000f63`         | `32'h00f00002`      |
+| **SW R3, R1, 2**    | Stores word from R3 to memory address (R1 + 2)        | `32'h0030a123`         | `32'h00209181`      |
+| **LW R13, R1, 2**   | Loads word from memory address (R1 + 2) into R13      | `32'h0020a683`         | `32'h00208681`      |
+| **SRL R16, R14, R2**| Shifts R14 right by the value in R2, stores in R16    | `32'h0030a123`         | `32'h00271803`      |
+| **SLL R15, R1, R2** | Shifts R1 left by the value in R2, stores in R15      | `32'h002097b3`         | `32'h00208783`      |
+
+1. **Standard RISC-V ISA**: Instructions follow the official RISC-V specification for 32-bit instruction encoding.
+2. **Hard-Coded ISA**: Instructions deviate from the RISC-V standard and follow a custom encoding defined by the designer.
+3. To ensure correct simulation, you must use the hard-coded instruction encodings when working with the provided Verilog netlist and testbench.
+
+Veifying instructions using Gtkwave :
+
+1.``ADD R6, R2, R1``
 
 ![add gtk](https://github.com/user-attachments/assets/c77638af-47af-4407-b781-867d18cbf38a)
 
+2.``SUB R7, R1, R2``
+
 ![sub gtkwave](https://github.com/user-attachments/assets/0000b0f7-9d58-4271-822c-5cdff834e178)
 
+3.``AND R8, R1, R3``
 
 ![And gtkwave](https://github.com/user-attachments/assets/fe6ded13-83ea-4bfa-80e5-f0034c6a22c7)
 
+4.``OR R9, R2, R5``
+
 ![or gtkwave](https://github.com/user-attachments/assets/d01b0e04-cec4-4ff6-95df-e1669d159aaf)
+
+5.``XOR R10, R1, R4``
 
 ![xor gtkwave](https://github.com/user-attachments/assets/f62ee43d-b5da-488f-9851-8f2483b57305)
 
+6.``SLT R1, R2, R4``
+
 ![slt gtkwave](https://github.com/user-attachments/assets/121880c6-69a9-4b35-be07-3cd440daad7b)
+
+7.``ADDI R12, R4, 5``
 
 ![addi gtkwave](https://github.com/user-attachments/assets/8414d1ef-22f1-4b9f-8414-08802b1b0a68)
 
+8.``SW R3, R1, 2``
+
 ![sw gtkwave](https://github.com/user-attachments/assets/70c6306d-4a62-483f-8cc3-9260607e417c)
+
+9.``SRL r16, r11, r2``
 
 ![Srl gtkwave](https://github.com/user-attachments/assets/0f7c2e0e-f3dc-4a11-846d-2da9b78f5260)
 
+10.``BEQ R0, R0, 15``
+
 ![beq gtkwave](https://github.com/user-attachments/assets/901dfb13-853c-41de-b11d-ea5dc9ca4c2a)
 
+11.``BNE R0, R1, 20``
+
 ![bne gtkwave](https://github.com/user-attachments/assets/c4d0039a-0e3c-4b82-8736-a565a464bb2e)
+
+12.`` SLL R15, R1, R2``
 
 ![sll gtkwave](https://github.com/user-attachments/assets/ecff238a-ecc6-4a39-8714-bcfdbef912e0)
 
