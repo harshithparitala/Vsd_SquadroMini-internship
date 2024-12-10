@@ -134,7 +134,7 @@ task : Wite a simple C program for any application and compile using RISC -V GCC
 Application:
 --
 
-Counterdown Clock :
+Countdown Counter :
 --
 The countdown counter is a program that begins from a specified value and decrements it by one at regular intervals until it reaches zero.
 
@@ -897,6 +897,11 @@ Output:
 
 The result (R15) is observed as 0x00000019 in EX_MEM_ALUOUT.
 
+</details>
+<details>
+<summary><b>Task 5:</b> Countdown Counter using Vsdsquadron-Mini </summary>   
+<br>
+
 
 
 
@@ -904,4 +909,3 @@ The result (R15) is observed as 0x00000019 in EX_MEM_ALUOUT.
 
 
 </details>
-
