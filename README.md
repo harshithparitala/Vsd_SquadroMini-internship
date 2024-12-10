@@ -902,6 +902,58 @@ The result (R15) is observed as 0x00000019 in EX_MEM_ALUOUT.
 <summary><b>Task 5:</b> Countdown Counter using Vsdsquadron-Mini </summary>   
 <br>
 
+Overview
+--
+Countdown counter application is designed for an embedded system using a 4x4 matrix keypad and an I2C-based LCD display. It allows users to set a countdown timer in seconds, display the time remaining on the LCD.
+
+Users can input a countdown time (up to 4 digits, in seconds) using the numeric keys (0-9) on the keypad. After entering the desired countdown time, the user presses the # key to start the countdown.The LCD shows the time remaining in seconds, which updates every second during the countdown.
+When the countdown reaches zero, the LCD displays "Time's Up!" to indicate that the timer has finished.After the countdown finishes, users can enter a new time for another countdown cycle. The system continuously waits for input.
+
+Components requried for Application:
+-
+1.VSDSquadron Mini
+
+2.4x4 Matrix keypad
+
+3.I2c Lcd display
+
+4.Jumper Wires
+
+5.VS Code 
+
+6.PlatformIO IDE
+
+Vsd_Squadronmini:
+--
+
+
+Pin connections:
+--
+## **Matrix Keypad Connections**
+
+| **Keypad Wire** | **Function** | **VSD Squadron Mini Pin** | **Description**       |
+|------------------|--------------|----------------------------|-----------------------|
+| Wire 8          | Row 1        | PD7                       | Connects to GPIO PD7  |
+| Wire 7          | Row 2        | PD6                       | Connects to GPIO PD6  |
+| Wire 6          | Row 3        | PD5                       | Connects to GPIO PD5  |
+| Wire 5          | Row 4        | PD4                       | Connects to GPIO PD4  |
+| Wire 4          | Column 1     | PD3                       | Connects to GPIO PD3  |
+| Wire 3          | Column 2     | PD2                       | Connects to GPIO PD2  |
+| Wire 2          | Column 3     | PD1                       | Connects to GPIO PD1  |
+
+---
+
+## **I2C LCD Display Connections**
+
+| **Pin** | **Function**  | **VSD Squadron Mini Pin** | **Description**        |
+|---------|---------------|----------------------------|------------------------|
+| GND (1) | Ground        | GND                       | Ground connection      |
+| VCC (2) | Power         | 5V                        | Power supply (5V)      |
+| SDA (3) | I2C Data Line | PC1                       | Connects to GPIO PC1   |
+| SCL (4) | I2C Clock Line| PC2                       | Connects to GPIO PC2   |
+
+Circuit Diagram:
+--
 
 
 
