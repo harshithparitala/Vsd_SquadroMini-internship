@@ -902,24 +902,6 @@ The result (R15) is observed as 0x00000019 in EX_MEM_ALUOUT.
 <summary><b>Task 5:</b> Countdown Counter using Vsdsquadron-Mini </summary>   
 <br>
 
-# Pin Connection Table
-
-| Component      | Pin Name    | VSD Squadron Mini Pin      | Description                        |
-|----------------|-------------|----------------------------|------------------------------------|
-| **Matrix Keypad** |             |                            |                                    |
-| Wire 8 (C4)    | PD7         | Column 4 connection to PD7. |
-| Wire 7 (C3)    | PD6         | Column 3 connection to PD6. |
-| Wire 6 (C2)    | PD5         | Column 2 connection to PD5. |
-| Wire 5 (C1)    | PD4         | Column 1 connection to PD4. |
-| Wire 4 (R4)    | PD3         | Row 4 connection to PD3.    |
-| Wire 3 (R3)    | PD2         | Row 3 connection to PD2.    |
-| Wire 2 (R2)    | PD1         | Row 2 connection to PD1.    |
-| Wire 1 (R1)    | PD0         | Row 1 connection to PD0.    |
-| **I2C LCD Display** |          |                            |                                    |
-| GND (1)        | VSD Squadron Mini GND | Ground connection.            |
-| VCC (2)        | VSD Squadron Mini 5V  | Power supply (5V).            |
-| SDA (3)        | PC1         | I2C Data line connected to PC1. |
-| SCL (4)        | PC2         | I2C Clock line connected to PC2. |
 
 
 
