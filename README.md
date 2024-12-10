@@ -906,7 +906,7 @@ Overview
 --
 Countdown counter application is designed for an embedded system using a 4x4 matrix keypad and an I2C-based LCD display. It allows users to set a countdown timer in seconds, display the time remaining on the LCD.
 
-Users can input a countdown time (up to 4 digits, in seconds) using the numeric keys (0-9) on the keypad. After entering the desired countdown time, the user presses the # key to start the countdown.The LCD shows the time remaining in seconds, which updates every second during the countdown.
+Users can input a countdown time (up to 4 digits, in seconds) using the numeric keys (0-9) on the keypad. After entering the desired countdown time, the user presses the` #` key to start the countdown.The LCD shows the time remaining in seconds, which updates every second during the countdown.Users can press the `*` key to reset the timer back to zero. The LCD will display a "Time reset" message.
 When the countdown reaches zero, the LCD displays "Time's Up!" to indicate that the timer has finished.After the countdown finishes, users can enter a new time for another countdown cycle. The system continuously waits for input.
 
 Components requried for Application:
@@ -926,6 +926,7 @@ Components requried for Application:
 Vsd_Squadronmini:
 --
 
+![image-removebg-preview (5)](https://github.com/user-attachments/assets/a63ce851-c985-4a77-88ce-3f7c9678e50d)
 
 Pin connections:
 --
