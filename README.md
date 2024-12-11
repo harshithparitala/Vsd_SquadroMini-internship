@@ -928,7 +928,7 @@ Vsd_Squadronmini:
 
 ![image-removebg-preview (5)](https://github.com/user-attachments/assets/a63ce851-c985-4a77-88ce-3f7c9678e50d)
 
-Pin connections:
+Hardware connections:
 --
 ## **Matrix Keypad Connections**
 
