@@ -956,6 +956,7 @@ Hardware connections:
 Circuit Diagram:
 --
 
+![countdown counter](https://github.com/user-attachments/assets/33100501-6150-45bd-a0d1-32319e365b23)
 
 
 
