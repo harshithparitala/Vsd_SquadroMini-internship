@@ -965,6 +965,318 @@ Circuit Diagram:
 <summary><b>Task 6:</b> Final : Implemtation of Countdown Counter using Vsdsquadron-Mini , I2c Lcd display and Keypad </summary>   
 <br>
 
+Application overview :
+-
+- *1.* keypad allows the user to input a 4-digit number for the countdown timer.
+- *2.* When the user presses the # key, the 4-digit input is converted into a countdown value (in seconds), and the timer starts counting down , the remaining time is displayed on the LCD.
+- *3.* User can press the * key at any time to restart the application, clearing the display and prompting the user to enter a new 4-digit countdown value.
+- *4.* I2C protocol is used to control the LCD, allowing for clear and dynamic updates during the countdown process.
+
+Code:
+-
+```
+#include <ch32v00x.h>
+#include <ch32v00x_gpio.h>
+#include <stdio.h>  // For sprintf
+
+// Define Keypad pins
+#define R1 GPIO_Pin_5 // PD7
+#define R2 GPIO_Pin_2 // PD2
+#define R3 GPIO_Pin_3 // PD3
+#define R4 GPIO_Pin_4 // PD4
+#define C1 GPIO_Pin_4 // PC4
+#define C2 GPIO_Pin_5 // PC5
+#define C3 GPIO_Pin_6 // PC6
+#define C4 GPIO_Pin_7 // PC7
+
+// Onboard LED pin (PD6)
+#define LED_PIN GPIO_Pin_6
+
+// Define the SDA and SCL Pins for I2C Communication
+#define SDA_PIN GPIO_Pin_1
+#define SCL_PIN GPIO_Pin_2
+
+// LCD I2C Address
+#define LCD_Address 0x27
+
+// Function Prototypes
+void GPIO_INIT(void);
+char keypad_get_key(void);
+void delay_ms(uint32_t ms);
+void i2c_start(void);
+void i2c_stop(void);
+void i2c_write(unsigned char data);
+void i2c_ACK(void);
+void lcd_send_cmd(unsigned char cmd);
+void lcd_send_data(unsigned char data);
+void lcd_send_string(const char *str);
+void lcd_init(void);
+void restart_application(void);
+
+// GPIO Initialization for Keypad and LCD
+void GPIO_INIT(void) {
+    GPIO_InitTypeDef GPIO_InitStructure;
+
+    // Enable clocks for GPIO ports C and D
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD, ENABLE);
+
+    // Initialize rows (R1-R4 on PD) as output
+    GPIO_InitStructure.GPIO_Pin = R1 | R2 | R3 | R4;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(GPIOD, &GPIO_InitStructure);
+
+    // Initialize columns (C1-C4 on PC) as input pull-up
+    GPIO_InitStructure.GPIO_Pin = C1 | C2 | C3 | C4;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
+
+    // Initialize LED pin (PD6) as output push-pull
+    GPIO_InitStructure.GPIO_Pin = LED_PIN;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(GPIOD, &GPIO_InitStructure);
+
+    // Initialize I2C Pins
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
+    GPIO_InitStructure.GPIO_Pin = SDA_PIN | SCL_PIN;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
+
+    // Initialize LCD
+    lcd_init();
+}
+
+// Delay Function
+void delay_ms(uint32_t ms) {
+    while (ms--) {
+        for (uint32_t i = 0; i < 4000; i++) {
+            __NOP(); // No operation, just a delay
+        }
+    }
+}
+
+// Keypad scan function
+char keypad_get_key(void) {
+    const char keys[4][4] = {
+        {'1', '2', '3', 'A'},
+        {'4', '5', '6', 'B'},
+        {'7', '8', '9', 'C'},
+        {'*', '0', '#', 'D'}
+    };
+
+    // Row pins array
+    GPIO_TypeDef* row_ports[] = {GPIOD, GPIOD, GPIOD, GPIOD};
+    uint16_t rows[] = {R1, R2, R3, R4};
+
+    // Column pins array
+    GPIO_TypeDef* col_ports[] = {GPIOC, GPIOC, GPIOC, GPIOC};
+    uint16_t cols[] = {C1, C2, C3, C4};
+
+    // Scan rows
+    for (int row = 0; row < 4; row++) {
+        // Set all rows high
+        for (int r = 0; r < 4; r++) {
+            GPIO_WriteBit(row_ports[r], rows[r], Bit_SET);
+        }
+
+        // Pull current row low
+        GPIO_WriteBit(row_ports[row], rows[row], Bit_RESET);
+
+        // Check each column
+        for (int col = 0; col < 4; col++) {
+            if (GPIO_ReadInputDataBit(col_ports[col], cols[col]) == RESET) {
+                return keys[row][col]; // Return pressed key
+            }
+        }
+    }
+    return '\0'; // No key pressed
+}
+
+// I2C Start Condition
+void i2c_start(void) {
+    GPIO_SetBits(GPIOC, SDA_PIN);
+    GPIO_SetBits(GPIOC, SCL_PIN);
+    delay_ms(1);
+    GPIO_ResetBits(GPIOC, SDA_PIN);
+    delay_ms(1);
+    GPIO_ResetBits(GPIOC, SCL_PIN);
+    delay_ms(1);
+}
+
+// I2C Stop Condition
+void i2c_stop(void) {
+    GPIO_ResetBits(GPIOC, SDA_PIN);
+    delay_ms(1);
+    GPIO_SetBits(GPIOC, SCL_PIN);
+    delay_ms(1);
+    GPIO_SetBits(GPIOC, SDA_PIN);
+    delay_ms(1);
+}
+
+// I2C Write Byte
+void i2c_write(unsigned char data) {
+    for (int i = 0; i < 8; i++) {
+        if (data & 0x80) {
+            GPIO_SetBits(GPIOC, SDA_PIN);
+        } else {
+            GPIO_ResetBits(GPIOC, SDA_PIN);
+        }
+        delay_ms(1);
+        GPIO_SetBits(GPIOC, SCL_PIN);
+        delay_ms(1);
+        GPIO_ResetBits(GPIOC, SCL_PIN);
+        data <<= 1;
+    }
+    // Release SDA for ACK
+    GPIO_SetBits(GPIOC, SDA_PIN);
+    delay_ms(1);
+    GPIO_SetBits(GPIOC, SCL_PIN);
+    delay_ms(1);
+    GPIO_ResetBits(GPIOC, SCL_PIN);
+    delay_ms(1);
+}
+
+// LCD Initialization
+void lcd_init(void) {
+    lcd_send_cmd(0x02); // Initialize in 4-bit mode
+    lcd_send_cmd(0x28); // Function set: 4-bit, 2 lines, 5x7 font
+    lcd_send_cmd(0x0C); // Display ON, Cursor OFF
+    lcd_send_cmd(0x06); // Entry mode set: Increment cursor
+    lcd_send_cmd(0x01); // Clear display
+    delay_ms(20);       // Wait for the clear command
+}
+
+// Send Command to LCD
+void lcd_send_cmd(unsigned char cmd) {
+    unsigned char cmd_u = (cmd & 0xF0);
+    unsigned char cmd_l = ((cmd << 4) & 0xF0);
+
+    i2c_start();
+    i2c_write(LCD_Address << 1);
+    i2c_write(cmd_u | 0x0C); // Enable, RS = 0
+    i2c_write(cmd_u | 0x08); // Disable, RS = 0
+    i2c_write(cmd_l | 0x0C); // Enable, RS = 0
+    i2c_write(cmd_l | 0x08); // Disable, RS = 0
+    i2c_stop();
+    delay_ms(2);
+}
+
+// Send Data to LCD
+void lcd_send_data(unsigned char data) {
+    unsigned char data_u = (data & 0xF0);
+    unsigned char data_l = ((data << 4) & 0xF0);
+
+    i2c_start();
+    i2c_write(LCD_Address << 1);
+    i2c_write(data_u | 0x0D); // Enable, RS = 1
+    i2c_write(data_u | 0x09); // Disable, RS = 1
+    i2c_write(data_l | 0x0D); // Enable, RS = 1
+    i2c_write(data_l | 0x09); // Disable, RS = 1
+    i2c_stop();
+    delay_ms(2);
+}
+
+// Send String to LCD
+void lcd_send_string(const char *str) {
+    while (*str) {
+        lcd_send_data(*str++);
+    }
+}
+
+// Restart Application
+void restart_application(void) {
+    // Reinitialize all GPIOs and LCD
+    GPIO_INIT();
+
+    // Clear the digits array
+    char digits[4] = {' ', ' ', ' ', ' '};
+
+    lcd_send_cmd(0x80); // Move cursor to first row, first column
+    lcd_send_string("Start Timer!");
+    delay_ms(2000);  // Display for 2 seconds
+
+    lcd_send_cmd(0x80); // Move cursor to first row, first column
+    lcd_send_string("Enter 4 Digits:");
+}
+
+// Main Function
+int main(void) {
+    GPIO_INIT();
+
+    lcd_send_cmd(0x80); // Move cursor to first row, first column
+    lcd_send_string("Start Timer!");
+
+    delay_ms(2000);  // Display for 2 seconds
+
+    lcd_send_cmd(0x80); // Move cursor to first row, first column
+    lcd_send_string("Enter 4 Digits:");
+
+    char digits[4] = {' ', ' ', ' ', ' '};  // Array to store the last 4 digits
+    int digit_count = 0;
+
+    while (1) {
+        char key = keypad_get_key();
+
+        // If any key is pressed
+        if (key != '\0') {
+            // If # is pressed, convert the digits to integer and count down
+            if (key == '#') {
+                // Convert the digits array to an integer
+                int num = (digits[0] - '0') * 1000 + (digits[1] - '0') * 100 + 
+                          (digits[2] - '0') * 10 + (digits[3] - '0');
+
+                // Countdown from the number to 0
+                for (int i = num; i >= 0; i--) {
+                    if (i == 0) {
+                        lcd_send_cmd(0xC0); // Move cursor to second row
+                        lcd_send_string("Time left: 0 sec");
+                        delay_ms(500);  // Wait before updating the LCD
+                        lcd_send_cmd(0x01); // Clear display
+                        lcd_send_cmd(0x80); // Move cursor to top row
+                        lcd_send_string("Time's Up!");
+                        delay_ms(2000);  // Display "Time's Up!" for 2 seconds
+                        // Clear display
+                        lcd_send_cmd(0x01); // Clear display
+                        // Show restart message
+                        lcd_send_cmd(0x80); // Move cursor to top row
+                        lcd_send_string("* to restart");
+                        break;
+                    } else {
+                        char buffer[16];
+                        sprintf(buffer, "Time left:%d sec", i); // Format countdown as "Time left: <value> sec"
+                        lcd_send_cmd(0xC0); // Move cursor to second row
+                        lcd_send_string(buffer);
+                        delay_ms(500);  // Wait before updating the LCD
+                        lcd_send_cmd(0x01); // Clear display
+                    }
+                }
+            } else {
+                // Shift the digits to the left and add the new key
+                for (int i = 0; i < 3; i++) {
+                    digits[i] = digits[i + 1];
+                }
+                digits[3] = key;
+
+                // Display the digits on the LCD
+                lcd_send_cmd(0xC0); // Move cursor to second row
+                lcd_send_data(digits[0]);
+                lcd_send_data(digits[1]);
+                lcd_send_data(digits[2]);
+                lcd_send_data(digits[3]);
+
+                delay_ms(200);  // Small delay to avoid bouncing
+            }
+        }
+
+        // Check for "*" to restart
+        if (key == '*') {
+            restart_application();
+        }
+    }
+}
+```
 
 
 
