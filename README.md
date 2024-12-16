@@ -933,14 +933,15 @@ Hardware connections:
 ## **Matrix Keypad Connections**
 
 | **Keypad Wire** | **Function** | **VSD Squadron Mini Pin** | **Description**       |
-|------------------|--------------|----------------------------|-----------------------|
+|------------------|--------------|---------------------------|-----------------------|
 | Wire 8          | Row 1        | PD7                       | Connects to GPIO PD7  |
-| Wire 7          | Row 2        | PD6                       | Connects to GPIO PD6  |
-| Wire 6          | Row 3        | PD5                       | Connects to GPIO PD5  |
+| Wire 7          | Row 2        | PD2                       | Connects to GPIO PD2  |
+| Wire 6          | Row 3        | PD3                       | Connects to GPIO PD3  |
 | Wire 5          | Row 4        | PD4                       | Connects to GPIO PD4  |
-| Wire 4          | Column 1     | PD3                       | Connects to GPIO PD3  |
-| Wire 3          | Column 2     | PD2                       | Connects to GPIO PD2  |
-| Wire 2          | Column 3     | PD1                       | Connects to GPIO PD1  |
+| Wire 4          | Column 1     | PC4                       | Connects to GPIO PC4  |
+| Wire 3          | Column 2     | PC5                       | Connects to GPIO PC5  |
+| Wire 2          | Column 3     | PC6                       | Connects to GPIO PC6  |
+| Wire 1          | Column 4     | PC7                       | Connects to GPIO PC7  |
 
 ---
 
