@@ -1289,6 +1289,8 @@ Application Video
 [Implementation Video Link](https://drive.google.com/file/d/1UFg3R2AqGH0I_9nuWgqDIXKle_nVIilu/view?usp=sharing)
 
 
+</details>
+
 <details>
 <summary><b> Acknowledgement </summary>   
 <br>
@@ -1300,7 +1302,5 @@ As the VSD Squadron Mini Board was essential to the successful completion of our
 
 
 
-
-</details>
 
 </details>
