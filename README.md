@@ -958,6 +958,11 @@ Circuit Diagram:
 
 ![countdown counter](https://github.com/user-attachments/assets/33100501-6150-45bd-a0d1-32319e365b23)
 
+</details>
+
+<details>
+<summary><b>Task 6:</b> Final : Implemtation of Countdown Counter using Vsdsquadron-Mini using I2c Lcd display and Keypad </summary>   
+<br>
 
 
 
