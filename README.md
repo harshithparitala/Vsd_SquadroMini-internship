@@ -967,10 +967,10 @@ Circuit Diagram:
 
 Application overview :
 -
-- *1.* keypad allows the user to input a 4-digit number for the countdown timer.
-- *2.* When the user presses the # key, the 4-digit input is converted into a countdown value (in seconds), and the timer starts counting down , the remaining time is displayed on the LCD.
-- *3.* User can press the * key at any time to restart the application, clearing the display and prompting the user to enter a new 4-digit countdown value.
-- *4.* I2C protocol is used to control the LCD, allowing for clear and dynamic updates during the countdown process.
+- ** keypad allows the user to input a 4-digit number for the countdown timer.
+- ** When the user presses the # key, the 4-digit input is converted into a countdown value (in seconds), and the timer starts counting down , the remaining time is displayed on the LCD.
+- ** User can press the * key at any time to restart the application, clearing the display and prompting the user to enter a new 4-digit countdown value.
+- ** I2C protocol is used to control the LCD, allowing for clear and dynamic updates during the countdown process.
 
 Code:
 -
