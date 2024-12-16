@@ -961,7 +961,7 @@ Circuit Diagram:
 </details>
 
 <details>
-<summary><b>Task 6:</b> Final : Implemtation of Countdown Counter using Vsdsquadron-Mini using I2c Lcd display and Keypad </summary>   
+<summary><b>Task 6:</b> Final : Implemtation of Countdown Counter using Vsdsquadron-Mini , I2c Lcd display and Keypad </summary>   
 <br>
 
 
