@@ -899,7 +899,7 @@ The result (R15) is observed as 0x00000019 in EX_MEM_ALUOUT.
 
 </details>
 <details>
-<summary><b>Task 5:</b>Design and Implementation of Countdown Counter using Vsdsquadron-Mini </summary>   
+<summary><b>Task 5:</b> Design and Implementation of Countdown Counter using Vsdsquadron-Mini </summary>   
 <br>
 
 Overview
